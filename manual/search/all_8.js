@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['secret',['secret',['../structsend__data.html#a37e8a1ed1891bfec9b4d6b78246fe008',1,'send_data']]],
-  ['send_5fdata',['send_data',['../structsend__data.html',1,'']]],
-  ['send_5fpairs',['send_pairs',['../structsend__data.html#a9ca1d0d8ca8d22e20b41598a8805a222',1,'send_data']]],
-  ['seq_5fnbr',['seq_nbr',['../structsend__data.html#a38bc1cbf304519f98d81786b03f41d05',1,'send_data']]],
-  ['server',['server',['../structserver.html',1,'server'],['../structsend__data.html#a74350ed413a4e50ac953add1a8585073',1,'send_data::server()']]],
-  ['svc_5fport',['svc_port',['../structsend__data.html#a63f796b39cf87868a7829cfc97412afd',1,'send_data']]]
+  ['value',['value',['../structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4',1,'dict_attr']]],
+  ['value_5fpair',['value_pair',['../structvalue__pair.html',1,'']]]
 ];

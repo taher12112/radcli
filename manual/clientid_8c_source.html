@@ -114,7 +114,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">struct </span>map2id_s *next;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__id-map.html#ga8d881845fb0894642a926850c5994235">   37</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__id-map.html#ga8d881845fb0894642a926850c5994235">rc_read_mapfile</a>(<a class="code" href="structrc__conf.html">rc_handle</a> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *filename)</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__id-map.html#ga8d881845fb0894642a926850c5994235">   37</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__id-map.html#ga8d881845fb0894642a926850c5994235">rc_read_mapfile</a>(rc_handle *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *filename)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">char</span> buffer[1024];</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        FILE *mapfd;</div>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="group__id-map.html#ga0ee250342a6eaa1d31b4a29a57b6476f">  105</a></span>&#160;uint32_t <a class="code" href="group__id-map.html#ga0ee250342a6eaa1d31b4a29a57b6476f">rc_map2id</a>(<a class="code" href="structrc__conf.html">rc_handle</a> <span class="keyword">const</span> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *name)</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="group__id-map.html#ga0ee250342a6eaa1d31b4a29a57b6476f">  105</a></span>&#160;uint32_t <a class="code" href="group__id-map.html#ga0ee250342a6eaa1d31b4a29a57b6476f">rc_map2id</a>(rc_handle <span class="keyword">const</span> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *name)</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keyword">struct </span>map2id_s *p;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">char</span> ttyname[PATH_MAX];</div>
@@ -198,7 +198,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__id-map.html#ga2bda01fb120f925074f2cef8cc410e37">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__id-map.html#ga2bda01fb120f925074f2cef8cc410e37">rc_map2id_free</a>(<a class="code" href="structrc__conf.html">rc_handle</a> *rh)</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__id-map.html#ga2bda01fb120f925074f2cef8cc410e37">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__id-map.html#ga2bda01fb120f925074f2cef8cc410e37">rc_map2id_free</a>(rc_handle *rh)</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">struct </span>map2id_s *p, *np;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
@@ -215,7 +215,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
 <div class="ttc" id="group__log-api_html_ga63c349cc0b5f49a622c2dd0577cbca53"><div class="ttname"><a href="group__log-api.html#ga63c349cc0b5f49a622c2dd0577cbca53">rc_log</a></div><div class="ttdeci">void rc_log(int prio, char const *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00039">log.c:39</a></div></div>
 <div class="ttc" id="group__id-map_html_ga0ee250342a6eaa1d31b4a29a57b6476f"><div class="ttname"><a href="group__id-map.html#ga0ee250342a6eaa1d31b4a29a57b6476f">rc_map2id</a></div><div class="ttdeci">uint32_t rc_map2id(rc_handle const *rh, char const *name)</div><div class="ttdef"><b>Definition:</b> <a href="clientid_8c_source.html#l00105">clientid.c:105</a></div></div>
-<div class="ttc" id="structrc__conf_html"><div class="ttname"><a href="structrc__conf.html">rc_conf</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00120">radcli.h:120</a></div></div>
 <div class="ttc" id="group__id-map_html_ga2bda01fb120f925074f2cef8cc410e37"><div class="ttname"><a href="group__id-map.html#ga2bda01fb120f925074f2cef8cc410e37">rc_map2id_free</a></div><div class="ttdeci">void rc_map2id_free(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="clientid_8c_source.html#l00131">clientid.c:131</a></div></div>
 <div class="ttc" id="group__id-map_html_ga8d881845fb0894642a926850c5994235"><div class="ttname"><a href="group__id-map.html#ga8d881845fb0894642a926850c5994235">rc_read_mapfile</a></div><div class="ttdeci">int rc_read_mapfile(rc_handle *rh, char const *filename)</div><div class="ttdef"><b>Definition:</b> <a href="clientid_8c_source.html#l00037">clientid.c:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

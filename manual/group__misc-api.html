@@ -109,9 +109,10 @@ struct addrinfo *&#160;</td><td class="memItemRight" valign="bottom"><b>rc_getad
 <tr class="separator:gae2901e09e8babae97222c3f1b208cebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa583d1326afa3b9ccd4958f3a0e6c89b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gaa583d1326afa3b9ccd4958f3a0e6c89b">rc_get_srcaddr</a> (struct sockaddr *lia, const struct sockaddr *ria)</td></tr>
 <tr class="separator:gaa583d1326afa3b9ccd4958f3a0e6c89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf68601b86a8c0a184b699e5f51db912e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, struct sockaddr_storage *lia)</td></tr>
+<tr class="memitem:gaf68601b86a8c0a184b699e5f51db912e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a> (rc_handle *rh, struct sockaddr_storage *lia)</td></tr>
 <tr class="separator:gaf68601b86a8c0a184b699e5f51db912e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafb1f5e110716ec03a002eadc4908ec1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gafb1f5e110716ec03a002eadc4908ec1b">rc_md5_calc</a> (unsigned char *output, unsigned char const *input, size_t inlen)</td></tr>
+<tr class="memitem:gafb1f5e110716ec03a002eadc4908ec1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafb1f5e110716ec03a002eadc4908ec1b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>rc_md5_calc</b> (unsigned char *output, unsigned char const *input, size_t inlen)</td></tr>
 <tr class="separator:gafb1f5e110716ec03a002eadc4908ec1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga775d0e0a8402dce9337b1fa761da669e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#ga775d0e0a8402dce9337b1fa761da669e">rc_str2tm</a> (char const *valstr, struct tm *tm)</td></tr>
 <tr class="separator:ga775d0e0a8402dce9337b1fa761da669e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,49 +193,6 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rc_strlcpy</b> (cha
 
 </div>
 </div>
-<a class="anchor" id="gafb1f5e110716ec03a002eadc4908ec1b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rc_md5_calc </td>
-          <td>(</td>
-          <td class="paramtype">unsigned char *&#160;</td>
-          <td class="paramname"><em>output</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned char const *&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>inlen</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Hash the provided data using MD5</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">output</td><td>will hold a 16-byte checksum. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>pointer to data to hash. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">inlen</td><td>the length of input. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="rc-md5_8c_source.html#l00026">26</a> of file <a class="el" href="rc-md5_8c_source.html">rc-md5.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="gaf68601b86a8c0a184b699e5f51db912e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -242,7 +200,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rc_strlcpy</b> (cha
         <tr>
           <td class="memname">void rc_own_bind_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>

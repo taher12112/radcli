@@ -103,13 +103,13 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa4a0d07770e69304684a36850fb0d928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **list, int attrid, void const *pval, int len, int vendorpec)</td></tr>
+<tr class="memitem:gaa4a0d07770e69304684a36850fb0d928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a> (rc_handle const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **list, int attrid, void const *pval, int len, int vendorpec)</td></tr>
 <tr class="separator:gaa4a0d07770e69304684a36850fb0d928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9088ae45ec4d5ae0dc9eeed2c66afcde"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9088ae45ec4d5ae0dc9eeed2c66afcde">rc_avpair_assign</a> (<a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *vp, void const *pval, int len)</td></tr>
 <tr class="separator:ga9088ae45ec4d5ae0dc9eeed2c66afcde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8415f465137b41aff3e4aa26329d28fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga8415f465137b41aff3e4aa26329d28fd">rc_avpair_new</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, int attrid, void const *pval, int len, int vendorpec)</td></tr>
+<tr class="memitem:ga8415f465137b41aff3e4aa26329d28fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga8415f465137b41aff3e4aa26329d28fd">rc_avpair_new</a> (rc_handle const *rh, int attrid, void const *pval, int len, int vendorpec)</td></tr>
 <tr class="separator:ga8415f465137b41aff3e4aa26329d28fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga914889997a20c056d569e0099df62fd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga914889997a20c056d569e0099df62fd1">rc_avpair_gen</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, unsigned char const *ptr, int length, int vendorpec)</td></tr>
+<tr class="memitem:ga914889997a20c056d569e0099df62fd1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga914889997a20c056d569e0099df62fd1">rc_avpair_gen</a> (rc_handle const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, unsigned char const *ptr, int length, int vendorpec)</td></tr>
 <tr class="separator:ga914889997a20c056d569e0099df62fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa08db12acbc9aa7d9a32503f95c380cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa08db12acbc9aa7d9a32503f95c380cb">rc_avpair_get</a> (<a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *vp, int attrid, int vendorpec)</td></tr>
 <tr class="separator:gaa08db12acbc9aa7d9a32503f95c380cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,65 +117,67 @@ Functions</h2></td></tr>
 <tr class="separator:gaea365a9e2758b772b682d7e4a75b1891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5f61f24404bf5529e53a58b31c04c65e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga5f61f24404bf5529e53a58b31c04c65e">rc_avpair_free</a> (<a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair)</td></tr>
 <tr class="separator:ga5f61f24404bf5529e53a58b31c04c65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9718df79e6fdb78c06abf9e33ae98616"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9718df79e6fdb78c06abf9e33ae98616">rc_avpair_parse</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *buffer, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **first_pair)</td></tr>
+<tr class="memitem:ga9718df79e6fdb78c06abf9e33ae98616"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9718df79e6fdb78c06abf9e33ae98616">rc_avpair_parse</a> (rc_handle const *rh, char const *buffer, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **first_pair)</td></tr>
 <tr class="separator:ga9718df79e6fdb78c06abf9e33ae98616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga77f9da4f29bffb60ad29c160a0fcbed7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, char *name, int ln, char *value, int lv)</td></tr>
+<tr class="memitem:ga77f9da4f29bffb60ad29c160a0fcbed7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a> (rc_handle const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, char *name, int ln, char *value, int lv)</td></tr>
 <tr class="separator:ga77f9da4f29bffb60ad29c160a0fcbed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga72e9d3a2b772a1816702af78a44dcede"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, char *buf, size_t buf_len)</td></tr>
+<tr class="memitem:ga72e9d3a2b772a1816702af78a44dcede"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a> (rc_handle const *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *pair, char *buf, size_t buf_len)</td></tr>
 <tr class="separator:ga72e9d3a2b772a1816702af78a44dcede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae88c74f6cf010bb8f56aae048f01b949"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, FILE *input)</td></tr>
+<tr class="memitem:gae88c74f6cf010bb8f56aae048f01b949"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a> (rc_handle const *rh, FILE *input)</td></tr>
 <tr class="separator:gae88c74f6cf010bb8f56aae048f01b949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3516aaf08082128fda8b17ce3f2b4404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga3516aaf08082128fda8b17ce3f2b4404">rc_buildreq</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, <a class="el" href="structsend__data.html">SEND_DATA</a> *data, int code, char *<a class="el" href="structserver.html">server</a>, unsigned short port, char *secret, int timeout, int retries)</td></tr>
+<tr class="memitem:ga3516aaf08082128fda8b17ce3f2b4404"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga3516aaf08082128fda8b17ce3f2b4404">rc_buildreq</a> (rc_handle const *rh, <a class="el" href="structsend__data.html">SEND_DATA</a> *data, int code, char *<a class="el" href="structserver.html">server</a>, unsigned short port, char *secret, int timeout, int retries)</td></tr>
 <tr class="separator:ga3516aaf08082128fda8b17ce3f2b4404"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga20e80c25f19ec33a35dccb3b054a9f62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga20e80c25f19ec33a35dccb3b054a9f62">rc_aaa</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg, int add_nas_port, int request_type)</td></tr>
+<tr class="memitem:ga20e80c25f19ec33a35dccb3b054a9f62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga20e80c25f19ec33a35dccb3b054a9f62">rc_aaa</a> (rc_handle *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg, int add_nas_port, int request_type)</td></tr>
 <tr class="separator:ga20e80c25f19ec33a35dccb3b054a9f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ac3f369b4bcc1b1e8302162784b665d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg)</td></tr>
+<tr class="memitem:ga4ac3f369b4bcc1b1e8302162784b665d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a> (rc_handle *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg)</td></tr>
 <tr class="separator:ga4ac3f369b4bcc1b1e8302162784b665d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2066bcec6837065d55d22d8e7c7636b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga2066bcec6837065d55d22d8e7c7636b2">rc_auth_proxy</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg)</td></tr>
+<tr class="memitem:ga2066bcec6837065d55d22d8e7c7636b2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga2066bcec6837065d55d22d8e7c7636b2">rc_auth_proxy</a> (rc_handle *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> **received, char *msg)</td></tr>
 <tr class="separator:ga2066bcec6837065d55d22d8e7c7636b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada1314b8109c95e44c79db6460f41f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gada1314b8109c95e44c79db6460f41f53">rc_acct</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send)</td></tr>
+<tr class="memitem:gada1314b8109c95e44c79db6460f41f53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gada1314b8109c95e44c79db6460f41f53">rc_acct</a> (rc_handle *rh, uint32_t client_port, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send)</td></tr>
 <tr class="separator:gada1314b8109c95e44c79db6460f41f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga584527a6e554e6913640afd303a9585c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga584527a6e554e6913640afd303a9585c">rc_acct_proxy</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send)</td></tr>
+<tr class="memitem:ga584527a6e554e6913640afd303a9585c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga584527a6e554e6913640afd303a9585c">rc_acct_proxy</a> (rc_handle *rh, <a class="el" href="structvalue__pair.html">VALUE_PAIR</a> *send)</td></tr>
 <tr class="separator:ga584527a6e554e6913640afd303a9585c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa67b353035c0f689e5dd80837981e531"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa67b353035c0f689e5dd80837981e531">rc_check</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, char *host, char *secret, unsigned short port, char *msg)</td></tr>
+<tr class="memitem:gaa67b353035c0f689e5dd80837981e531"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa67b353035c0f689e5dd80837981e531">rc_check</a> (rc_handle *rh, char *host, char *secret, unsigned short port, char *msg)</td></tr>
 <tr class="separator:gaa67b353035c0f689e5dd80837981e531"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaefc76d69a724a00ea12e13cec9006541"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaefc76d69a724a00ea12e13cec9006541">rc_add_config</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, char const *option_name, char const *option_val, char const *source, int line)</td></tr>
+<tr class="memitem:gaefc76d69a724a00ea12e13cec9006541"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaefc76d69a724a00ea12e13cec9006541">rc_add_config</a> (rc_handle *rh, char const *option_name, char const *option_val, char const *source, int line)</td></tr>
 <tr class="separator:gaefc76d69a724a00ea12e13cec9006541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1b3073b425042e583fa0acfa4ce31fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaf1b3073b425042e583fa0acfa4ce31fd">rc_config_init</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh)</td></tr>
+<tr class="memitem:gaf1b3073b425042e583fa0acfa4ce31fd"><td class="memItemLeft" align="right" valign="top">rc_handle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaf1b3073b425042e583fa0acfa4ce31fd">rc_config_init</a> (rc_handle *rh)</td></tr>
 <tr class="separator:gaf1b3073b425042e583fa0acfa4ce31fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0cf236cc5c5d4938334c97efc75a4730"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a> (char const *filename)</td></tr>
+<tr class="memitem:gaad54630effc673c9561336426c8c2803"><td class="memItemLeft" align="right" valign="top">rc_handle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaad54630effc673c9561336426c8c2803">rc_read_config2</a> (char const *filename, unsigned flags)</td></tr>
+<tr class="separator:gaad54630effc673c9561336426c8c2803"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cf236cc5c5d4938334c97efc75a4730"><td class="memItemLeft" align="right" valign="top">rc_handle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a> (char const *filename)</td></tr>
 <tr class="separator:ga0cf236cc5c5d4938334c97efc75a4730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga42685c9f973d00219a3edc6aa4344a47"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *optname)</td></tr>
+<tr class="memitem:ga42685c9f973d00219a3edc6aa4344a47"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a> (rc_handle const *rh, char const *optname)</td></tr>
 <tr class="separator:ga42685c9f973d00219a3edc6aa4344a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa65aaa1a37430bb2a4b971dbb123c36e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *optname)</td></tr>
+<tr class="memitem:gaa65aaa1a37430bb2a4b971dbb123c36e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a> (rc_handle const *rh, char const *optname)</td></tr>
 <tr class="separator:gaa65aaa1a37430bb2a4b971dbb123c36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf350649b537494e8971c42dae5d6832b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structserver.html">SERVER</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *optname)</td></tr>
+<tr class="memitem:gaf350649b537494e8971c42dae5d6832b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structserver.html">SERVER</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a> (rc_handle const *rh, char const *optname)</td></tr>
 <tr class="separator:gaf350649b537494e8971c42dae5d6832b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab78217ed52b89c41ff10356261ad8dfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gab78217ed52b89c41ff10356261ad8dfa">rc_test_config</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, char const *filename)</td></tr>
+<tr class="memitem:gab78217ed52b89c41ff10356261ad8dfa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gab78217ed52b89c41ff10356261ad8dfa">rc_test_config</a> (rc_handle *rh, char const *filename)</td></tr>
 <tr class="separator:gab78217ed52b89c41ff10356261ad8dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad778c0ba593c48a7961f9e1016d420ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gad778c0ba593c48a7961f9e1016d420ca">rc_find_server_addr</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *server_name, struct addrinfo **info, char *secret, rc_type type)</td></tr>
+<tr class="memitem:gad778c0ba593c48a7961f9e1016d420ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gad778c0ba593c48a7961f9e1016d420ca">rc_find_server_addr</a> (rc_handle const *rh, char const *server_name, struct addrinfo **info, char *secret, rc_type type)</td></tr>
 <tr class="separator:gad778c0ba593c48a7961f9e1016d420ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf5906a83f783dcb41b9c590e68311a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gacf5906a83f783dcb41b9c590e68311a9">rc_config_free</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh)</td></tr>
+<tr class="memitem:gacf5906a83f783dcb41b9c590e68311a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gacf5906a83f783dcb41b9c590e68311a9">rc_config_free</a> (rc_handle *rh)</td></tr>
 <tr class="separator:gacf5906a83f783dcb41b9c590e68311a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ba12c0c90ed56354aa7b071c56a1d7f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga1ba12c0c90ed56354aa7b071c56a1d7f">rc_new</a> (void)</td></tr>
+<tr class="memitem:ga1ba12c0c90ed56354aa7b071c56a1d7f"><td class="memItemLeft" align="right" valign="top">rc_handle *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga1ba12c0c90ed56354aa7b071c56a1d7f">rc_new</a> (void)</td></tr>
 <tr class="separator:ga1ba12c0c90ed56354aa7b071c56a1d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga48d9ef200a6cc234684a633b76ee650e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh)</td></tr>
+<tr class="memitem:ga48d9ef200a6cc234684a633b76ee650e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a> (rc_handle *rh)</td></tr>
 <tr class="separator:ga48d9ef200a6cc234684a633b76ee650e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9cac8adae500892228c7e0acdedc0e79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9cac8adae500892228c7e0acdedc0e79">rc_read_dictionary</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh, char const *filename)</td></tr>
+<tr class="memitem:ga9cac8adae500892228c7e0acdedc0e79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9cac8adae500892228c7e0acdedc0e79">rc_read_dictionary</a> (rc_handle *rh, char const *filename)</td></tr>
 <tr class="separator:ga9cac8adae500892228c7e0acdedc0e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga095a3d27e997fa89332f688e208cade3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__attr.html">DICT_ATTR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga095a3d27e997fa89332f688e208cade3">rc_dict_getattr</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, int attribute)</td></tr>
+<tr class="memitem:ga095a3d27e997fa89332f688e208cade3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__attr.html">DICT_ATTR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga095a3d27e997fa89332f688e208cade3">rc_dict_getattr</a> (rc_handle const *rh, int attribute)</td></tr>
 <tr class="separator:ga095a3d27e997fa89332f688e208cade3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14fb4f611fec4449117394b855ba514f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__attr.html">DICT_ATTR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga14fb4f611fec4449117394b855ba514f">rc_dict_findattr</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *attrname)</td></tr>
+<tr class="memitem:ga14fb4f611fec4449117394b855ba514f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__attr.html">DICT_ATTR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga14fb4f611fec4449117394b855ba514f">rc_dict_findattr</a> (rc_handle const *rh, char const *attrname)</td></tr>
 <tr class="separator:ga14fb4f611fec4449117394b855ba514f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga66eb427706760d7c10b5cfa88a91e547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__value.html">DICT_VALUE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga66eb427706760d7c10b5cfa88a91e547">rc_dict_findval</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *valname)</td></tr>
+<tr class="memitem:ga66eb427706760d7c10b5cfa88a91e547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__value.html">DICT_VALUE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga66eb427706760d7c10b5cfa88a91e547">rc_dict_findval</a> (rc_handle const *rh, char const *valname)</td></tr>
 <tr class="separator:ga66eb427706760d7c10b5cfa88a91e547"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c52baba69d2f5dd2b82086d8256590d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga6c52baba69d2f5dd2b82086d8256590d">rc_dict_findvend</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, char const *vendorname)</td></tr>
+<tr class="memitem:ga6c52baba69d2f5dd2b82086d8256590d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga6c52baba69d2f5dd2b82086d8256590d">rc_dict_findvend</a> (rc_handle const *rh, char const *vendorname)</td></tr>
 <tr class="separator:ga6c52baba69d2f5dd2b82086d8256590d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43e45fb1811660e2f18815803140f7ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga43e45fb1811660e2f18815803140f7ae">rc_dict_getvend</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, int vendorpec)</td></tr>
+<tr class="memitem:ga43e45fb1811660e2f18815803140f7ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga43e45fb1811660e2f18815803140f7ae">rc_dict_getvend</a> (rc_handle const *rh, int vendorpec)</td></tr>
 <tr class="separator:ga43e45fb1811660e2f18815803140f7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga849a0ade6619052eb0f3f06a5541b06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__value.html">DICT_VALUE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a> (<a class="el" href="structrc__conf.html">rc_handle</a> const *rh, uint32_t value, char const *attrname)</td></tr>
+<tr class="memitem:ga849a0ade6619052eb0f3f06a5541b06f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__value.html">DICT_VALUE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a> (rc_handle const *rh, uint32_t value, char const *attrname)</td></tr>
 <tr class="separator:ga849a0ade6619052eb0f3f06a5541b06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2f103c1c812c1bde0c052ed73cdcdee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gac2f103c1c812c1bde0c052ed73cdcdee">rc_dict_free</a> (<a class="el" href="structrc__conf.html">rc_handle</a> *rh)</td></tr>
+<tr class="memitem:gac2f103c1c812c1bde0c052ed73cdcdee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#gac2f103c1c812c1bde0c052ed73cdcdee">rc_dict_free</a> (rc_handle *rh)</td></tr>
 <tr class="separator:gac2f103c1c812c1bde0c052ed73cdcdee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -187,7 +189,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_aaa </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -259,7 +261,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_acct </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -304,7 +306,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_acct_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -341,7 +343,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_add_config </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -388,7 +390,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00290">290</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00291">291</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -399,7 +401,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_auth </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -445,7 +447,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>received value_pairs in received, messages from the server in msg (if non-NULL), and OK_RC (0) on success, negative on failure as return value. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a7">radexample.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a5">radexample.c</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="buildreq_8c_source.html#l00199">199</a> of file <a class="el" href="buildreq_8c_source.html">buildreq.c</a>.</p>
 
@@ -458,7 +460,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_auth_proxy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -510,7 +512,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a>* rc_avpair_add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -564,7 +566,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to added a/v pair upon success, NULL pointer upon failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a6">radexample.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a4">radexample.c</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="avpair_8c_source.html#l00039">39</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
@@ -646,7 +648,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a>* rc_avpair_gen </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -793,7 +795,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">char* rc_avpair_log </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -845,7 +847,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a>* rc_avpair_new </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -903,7 +905,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_avpair_parse </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -947,7 +949,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structvalue__pair.html">VALUE_PAIR</a>* rc_avpair_readin </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -984,7 +986,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_avpair_tostr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1049,7 +1051,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void rc_buildreq </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1127,7 +1129,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_check </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1185,7 +1187,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_conf_int </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1211,7 +1213,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00565">565</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00600">600</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1222,7 +1224,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structserver.html">SERVER</a>* rc_conf_srv </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1248,7 +1250,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00590">590</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00625">625</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1259,7 +1261,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">char* rc_conf_str </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1284,9 +1286,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a5">radexample.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a3">radexample.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="config_8c_source.html#l00545">545</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00580">580</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1297,7 +1299,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void rc_config_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1311,7 +1313,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Free allocated config values </p>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00907">907</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00937">937</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1320,9 +1322,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrc__conf.html">rc_handle</a>* rc_config_init </td>
+          <td class="memname">rc_handle* rc_config_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1338,7 +1340,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rc_handle on success, NULL on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00343">343</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00344">344</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1349,7 +1351,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void rc_destroy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1363,7 +1365,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00953">953</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00983">983</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1374,7 +1376,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__attr.html">DICT_ATTR</a>* rc_dict_findattr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1411,7 +1413,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__value.html">DICT_VALUE</a>* rc_dict_findval </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1448,7 +1450,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a>* rc_dict_findvend </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1485,7 +1487,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void rc_dict_free </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1510,7 +1512,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__attr.html">DICT_ATTR</a>* rc_dict_getattr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1547,7 +1549,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__value.html">DICT_VALUE</a>* rc_dict_getval </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1591,7 +1593,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structdict__vendor.html">DICT_VENDOR</a>* rc_dict_getvend </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1628,7 +1630,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_find_server_addr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> const *&#160;</td>
+          <td class="paramtype">rc_handle const *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1675,7 +1677,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00753">753</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00783">783</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1684,7 +1686,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrc__conf.html">rc_handle</a>* rc_new </td>
+          <td class="memname">rc_handle* rc_new </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -1695,7 +1697,7 @@ Functions</h2></td></tr>
 <p>Initialises new Radius Client handle</p>
 <dl class="section return"><dt>Returns</dt><dd>a new rc_handle (free with rc_destroy). </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00937">937</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00967">967</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1704,7 +1706,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structrc__conf.html">rc_handle</a>* rc_read_config </td>
+          <td class="memname">rc_handle* rc_read_config </td>
           <td>(</td>
           <td class="paramtype">char const *&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -1713,6 +1715,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Read the global config file</p>
+<p>This function is equivalent to <a class="el" href="group__radcli-api.html#gaad54630effc673c9561336426c8c2803">rc_read_config2()</a> with no flags. It is recommended to use <a class="el" href="group__radcli-api.html#gaad54630effc673c9561336426c8c2803">rc_read_config2()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>a name of a file. </td></tr>
@@ -1720,9 +1723,46 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>new rc_handle on success, NULL when failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a3">radexample.c</a>.</dd>
+
+<p>Definition at line <a class="el" href="config_8c_source.html#l00569">569</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaad54630effc673c9561336426c8c2803"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rc_handle* rc_read_config2 </td>
+          <td>(</td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Read the global config file</p>
+<p>This function will load the provided configuration file, and if RC_CONFIG_LOAD_ALL flag is specified any other files such as the dictionary.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>a name of a file.  zero or RC_CONFIG_LOAD_ALL. </td></tr>
+  </table>
+  </dd>
 </dl>
-<p>Definition at line <a class="el" href="config_8c_source.html#l00423">423</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>new rc_handle on success, NULL when failure. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a2">radexample.c</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00429">429</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1733,7 +1773,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_read_dictionary </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1759,8 +1799,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a4">radexample.c</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="dict_8c_source.html#l00036">36</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
@@ -1772,7 +1811,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int rc_test_config </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structrc__conf.html">rc_handle</a> *&#160;</td>
+          <td class="paramtype">rc_handle *&#160;</td>
           <td class="paramname"><em>rh</em>, </td>
         </tr>
         <tr>
@@ -1798,7 +1837,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 when failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00610">610</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00645">645</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>

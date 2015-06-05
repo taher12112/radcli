@@ -150,10 +150,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        gnutls_certificate_credentials_t x509_cred;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">struct </span>tls_int_st ctx;  <span class="comment">/* one for ACCT and another for AUTH */</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">unsigned</span> flags; <span class="comment">/* the flags set on init */</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="structrc__conf.html">rc_handle</a> *rh; <span class="comment">/* a pointer to our owner */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        rc_handle *rh; <span class="comment">/* a pointer to our owner */</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} tls_st;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> restart_session(<a class="code" href="structrc__conf.html">rc_handle</a> *rh, tls_st *st);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> restart_session(rc_handle *rh, tls_st *st);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> tls_get_fd(<span class="keywordtype">void</span> *ptr, <span class="keyword">struct</span> sockaddr *our_sockaddr)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
@@ -306,7 +306,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        }</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> init_session(<a class="code" href="structrc__conf.html">rc_handle</a> *rh, tls_int_st *ses,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> init_session(rc_handle *rh, tls_int_st *ses,</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        <span class="keyword">const</span> <span class="keywordtype">char</span> *hostname, <span class="keywordtype">unsigned</span> port,</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        <span class="keyword">struct</span> sockaddr_storage *our_sockaddr,</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        <span class="keywordtype">int</span> timeout,</div>
@@ -475,7 +475,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;<span class="comment"> * we will try heartbeats */</span></div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;<span class="preprocessor">#define TIME_ALIVE 120</span></div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> restart_session(<a class="code" href="structrc__conf.html">rc_handle</a> *rh, tls_st *st)</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> restart_session(rc_handle *rh, tls_st *st)</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keyword">struct </span>tls_int_st tmps;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        time_t now = time(0);</div>
@@ -505,7 +505,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;</div>
-<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">  427</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">rc_tls_fd</a>(<a class="code" href="structrc__conf.html">rc_handle</a> * rh)</div>
+<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">  427</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">rc_tls_fd</a>(rc_handle * rh)</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;{</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        tls_st *st;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;</div>
@@ -520,7 +520,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;</div>
-<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">  454</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">rc_check_tls</a>(<a class="code" href="structrc__conf.html">rc_handle</a> * rh)</div>
+<div class="line"><a name="l00454"></a><span class="lineno"><a class="line" href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">  454</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">rc_check_tls</a>(rc_handle * rh)</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;{</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        tls_st *st;</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        time_t now = time(0);</div>
@@ -546,7 +546,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;}</div>
 <div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;</div>
-<div class="line"><a name="l00484"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">  484</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">rc_deinit_tls</a>(<a class="code" href="structrc__conf.html">rc_handle</a> * rh)</div>
+<div class="line"><a name="l00484"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">  484</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">rc_deinit_tls</a>(rc_handle * rh)</div>
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;{</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        tls_st *st = rh-&gt;so.ptr;</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;        <span class="keywordflow">if</span> (st) {</div>
@@ -560,7 +560,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        free(st);</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;}</div>
 <div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;</div>
-<div class="line"><a name="l00506"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">  506</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">rc_init_tls</a>(<a class="code" href="structrc__conf.html">rc_handle</a> * rh, <span class="keywordtype">unsigned</span> flags)</div>
+<div class="line"><a name="l00506"></a><span class="lineno"><a class="line" href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">  506</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">rc_init_tls</a>(rc_handle * rh, <span class="keywordtype">unsigned</span> flags)</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;        <span class="keywordtype">int</span> ret, e;</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        tls_st *st = NULL;</div>
@@ -746,15 +746,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;</div>
 <div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;</div>
-<div class="ttc" id="group__radcli-api_html_gaf350649b537494e8971c42dae5d6832b"><div class="ttname"><a href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a></div><div class="ttdeci">SERVER * rc_conf_srv(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00590">config.c:590</a></div></div>
-<div class="ttc" id="group__radcli-api_html_gaa65aaa1a37430bb2a4b971dbb123c36e"><div class="ttname"><a href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a></div><div class="ttdeci">int rc_conf_int(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00565">config.c:565</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00545">config.c:545</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gaf350649b537494e8971c42dae5d6832b"><div class="ttname"><a href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a></div><div class="ttdeci">SERVER * rc_conf_srv(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00625">config.c:625</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gaa65aaa1a37430bb2a4b971dbb123c36e"><div class="ttname"><a href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a></div><div class="ttdeci">int rc_conf_int(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00600">config.c:600</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00580">config.c:580</a></div></div>
 <div class="ttc" id="group__log-api_html_ga63c349cc0b5f49a622c2dd0577cbca53"><div class="ttname"><a href="group__log-api.html#ga63c349cc0b5f49a622c2dd0577cbca53">rc_log</a></div><div class="ttdeci">void rc_log(int prio, char const *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00039">log.c:39</a></div></div>
-<div class="ttc" id="structserver_html"><div class="ttname"><a href="structserver.html">server</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00090">radcli.h:90</a></div></div>
+<div class="ttc" id="structserver_html"><div class="ttname"><a href="structserver.html">server</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00085">radcli.h:85</a></div></div>
 <div class="ttc" id="group__tls-api_html_ga7a391814f9095f70ca8e4ad5cc82e81e"><div class="ttname"><a href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">rc_init_tls</a></div><div class="ttdeci">int rc_init_tls(rc_handle *rh, unsigned flags)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00506">tls.c:506</a></div></div>
 <div class="ttc" id="group__tls-api_html_ga14ea263b20cc188f67e75f24885f23be"><div class="ttname"><a href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">rc_deinit_tls</a></div><div class="ttdeci">void rc_deinit_tls(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00484">tls.c:484</a></div></div>
 <div class="ttc" id="group__misc-api_html_gaf68601b86a8c0a184b699e5f51db912e"><div class="ttname"><a href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a></div><div class="ttdeci">void rc_own_bind_addr(rc_handle *rh, struct sockaddr_storage *lia)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00162">ip_util.c:162</a></div></div>
-<div class="ttc" id="structrc__conf_html"><div class="ttname"><a href="structrc__conf.html">rc_conf</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00120">radcli.h:120</a></div></div>
 <div class="ttc" id="group__tls-api_html_ga349f4bec48db04afa4cddf7d1d9fd0e2"><div class="ttname"><a href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">rc_tls_fd</a></div><div class="ttdeci">int rc_tls_fd(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00427">tls.c:427</a></div></div>
 <div class="ttc" id="group__tls-api_html_gae799681b16f1bd28305b1818d8ee9d7c"><div class="ttname"><a href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">rc_check_tls</a></div><div class="ttdeci">int rc_check_tls(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00454">tls.c:454</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

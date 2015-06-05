@@ -112,22 +112,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        uint32_t                service;</div>
 <div class="line">        <span class="keywordtype">char</span>            msg[PW_MAX_MSG_SIZE], username_realm[256];</div>
 <div class="line">        <span class="keywordtype">char</span>            *default_realm;</div>
-<div class="line">        <a name="_a1"></a><a class="code" href="structrc__conf.html">rc_handle</a>       *rh;</div>
+<div class="line">        rc_handle       *rh;</div>
 <div class="line"></div>
 <div class="line">        pname = (pname = strrchr(argv[0],<span class="charliteral">&#39;/&#39;</span>))?pname+1:argv[0];</div>
 <div class="line"></div>
-<div class="line">        <a name="a2"></a><a class="code" href="group__log-api.html#gaba387f2f50c56fb5d6ccfe98bb7f65c7">rc_openlog</a>(pname);</div>
+<div class="line">        <a name="a1"></a><a class="code" href="group__log-api.html#gaba387f2f50c56fb5d6ccfe98bb7f65c7">rc_openlog</a>(pname);</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> ((rh = <a name="a3"></a><a class="code" href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a>(RC_CONFIG_FILE)) == NULL)</div>
+<div class="line">        <span class="keywordflow">if</span> ((rh = <a name="a2"></a><a class="code" href="group__radcli-api.html#gaad54630effc673c9561336426c8c2803">rc_read_config2</a>(RC_CONFIG_FILE, RC_CONFIG_LOAD_ALL)) == NULL)</div>
 <div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (<a name="a4"></a><a class="code" href="group__radcli-api.html#ga9cac8adae500892228c7e0acdedc0e79">rc_read_dictionary</a>(rh, <a name="a5"></a><a class="code" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a>(rh, <span class="stringliteral">&quot;dictionary&quot;</span>)) != 0)</div>
-<div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
-<div class="line"></div>
-<div class="line">        default_realm = <a class="code" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a>(rh, <span class="stringliteral">&quot;default_realm&quot;</span>);</div>
+<div class="line">        default_realm = <a name="a3"></a><a class="code" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a>(rh, <span class="stringliteral">&quot;default_realm&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">        strcpy(username, <span class="stringliteral">&quot;my-username&quot;</span>);</div>
-<div class="line">        strcpy(password, <span class="stringliteral">&quot;my-password&quot;</span>);</div>
+<div class="line">        strcpy(passwd, <span class="stringliteral">&quot;my-password&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">        send = NULL;</div>
 <div class="line"></div>
@@ -144,7 +141,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">                strncat(username_realm, default_realm, <span class="keyword">sizeof</span>(username_realm)-strlen(username_realm)-1);</div>
 <div class="line">        }</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordflow">if</span> (<a name="a6"></a><a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_USER_NAME, username_realm, -1, 0) == NULL)</div>
+<div class="line">        <span class="keywordflow">if</span> (<a name="a4"></a><a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_USER_NAME, username_realm, -1, 0) == NULL)</div>
 <div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"></div>
 <div class="line">        <span class="comment">/*</span></div>
@@ -160,7 +157,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_SERVICE_TYPE, &amp;service, -1, 0) == NULL)</div>
 <div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"></div>
-<div class="line">        result = <a name="a7"></a><a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, msg);</div>
+<div class="line">        result = <a name="a5"></a><a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, msg);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (result == OK_RC) {</div>
 <div class="line">                fprintf(stderr, <span class="stringliteral">&quot;\&quot;%s\&quot; RADIUS Authentication OK\n&quot;</span>, username);</div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['env',['env',['../structenv.html',1,'']]]
+  ['logging_20api',['Logging API',['../group__log-api.html',1,'']]]
 ];

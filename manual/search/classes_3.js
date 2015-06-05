@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rc_5fconf',['rc_conf',['../structrc__conf.html',1,'']]],
-  ['rc_5fsockets_5foverride',['rc_sockets_override',['../structrc__sockets__override.html',1,'']]]
+  ['send_5fdata',['send_data',['../structsend__data.html',1,'']]],
+  ['server',['server',['../structserver.html',1,'']]]
 ];
