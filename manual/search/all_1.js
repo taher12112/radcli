@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['dict_5fattr',['dict_attr',['../structdict__attr.html',1,'']]],
-  ['dict_5fvalue',['dict_value',['../structdict__value.html',1,'']]],
-  ['dict_5fvendor',['dict_vendor',['../structdict__vendor.html',1,'']]]
+  ['code',['code',['../structsend__data.html#ac35728ee703d5b7f1d15f99dfc9cbaf3',1,'send_data']]]
 ];

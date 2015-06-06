@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['miscellaneous_20api',['Miscellaneous API',['../group__misc-api.html',1,'']]],
-  ['main_20api',['Main API',['../group__radcli-api.html',1,'']]]
+  ['lvalue',['lvalue',['../structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc',1,'value_pair']]]
 ];

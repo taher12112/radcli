@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logging_20api',['Logging API',['../group__log-api.html',1,'']]]
+  ['miscellaneous_20api',['Miscellaneous API',['../group__misc-api.html',1,'']]],
+  ['main_20api',['Main API',['../group__radcli-api.html',1,'']]]
 ];

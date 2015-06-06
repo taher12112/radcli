@@ -111,6 +111,8 @@ struct addrinfo *&#160;</td><td class="memItemRight" valign="bottom"><b>rc_getad
 <tr class="separator:gaa583d1326afa3b9ccd4958f3a0e6c89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf68601b86a8c0a184b699e5f51db912e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a> (rc_handle *rh, struct sockaddr_storage *lia)</td></tr>
 <tr class="separator:gaf68601b86a8c0a184b699e5f51db912e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba387f2f50c56fb5d6ccfe98bb7f65c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__misc-api.html#gaba387f2f50c56fb5d6ccfe98bb7f65c7">rc_openlog</a> (char const *ident)</td></tr>
+<tr class="separator:gaba387f2f50c56fb5d6ccfe98bb7f65c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafb1f5e110716ec03a002eadc4908ec1b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gafb1f5e110716ec03a002eadc4908ec1b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>rc_md5_calc</b> (unsigned char *output, unsigned char const *input, size_t inlen)</td></tr>
 <tr class="separator:gafb1f5e110716ec03a002eadc4908ec1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +192,33 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rc_strlcpy</b> (cha
 <dl class="section return"><dt>Returns</dt><dd>the port number. </dd></dl>
 
 <p>Definition at line <a class="el" href="ip__util_8c_source.html#l00062">62</a> of file <a class="el" href="ip__util_8c_source.html">ip_util.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaba387f2f50c56fb5d6ccfe98bb7f65c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rc_openlog </td>
+          <td>(</td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>ident</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Opens system log</p>
+<p>This function is a wrapper over openlog() in systems which support it. Don't call it if you already call openlog().</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ident</td><td>the name of the program. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a1">radexample.c</a>.</dd>
+</dl>
+<p>Definition at line <a class="el" href="log_8c_source.html#l00029">29</a> of file <a class="el" href="log_8c_source.html">log.c</a>.</p>
 
 </div>
 </div>

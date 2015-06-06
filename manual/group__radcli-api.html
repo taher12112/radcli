@@ -172,6 +172,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga1ba12c0c90ed56354aa7b071c56a1d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga48d9ef200a6cc234684a633b76ee650e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a> (rc_handle *rh)</td></tr>
 <tr class="separator:ga48d9ef200a6cc234684a633b76ee650e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e0efb892e51ebf5c2a7e748e12b0b80"><td class="memItemLeft" align="right" valign="top">rc_socket_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">rc_get_socket_type</a> (rc_handle *rh)</td></tr>
+<tr class="separator:ga0e0efb892e51ebf5c2a7e748e12b0b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9cac8adae500892228c7e0acdedc0e79"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga9cac8adae500892228c7e0acdedc0e79">rc_read_dictionary</a> (rc_handle *rh, char const *filename)</td></tr>
 <tr class="separator:ga9cac8adae500892228c7e0acdedc0e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga095a3d27e997fa89332f688e208cade3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdict__attr.html">DICT_ATTR</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__radcli-api.html#ga095a3d27e997fa89332f688e208cade3">rc_dict_getattr</a> (rc_handle const *rh, int attribute)</td></tr>
@@ -389,20 +391,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Allow a config option to be added to rc_handle from inside a program</p>
+<p>Allow a config option to be added to rc_handle from inside a program.</p>
+<p>That allows programs to setup a handle without loading a configuration file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rh</td><td>a handle to parsed configuration. </td></tr>
     <tr><td class="paramname">option_name</td><td>the name of the option. </td></tr>
     <tr><td class="paramname">option_val</td><td>the value to be added. </td></tr>
-    <tr><td class="paramname">source</td><td>typically should be __FILE__ or __func__ for logging purposes. </td></tr>
-    <tr><td class="paramname">line</td><td>__LINE__ for logging purposes. </td></tr>
+    <tr><td class="paramname">source</td><td>typically should be <b>FILE</b> or <b>func</b> for logging purposes. </td></tr>
+    <tr><td class="paramname">line</td><td><b>LINE</b> for logging purposes. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00290">290</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00294">294</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -848,7 +851,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a pointer to provided storage buffer. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00835">835</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00834">834</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -987,7 +990,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the array of value pairs. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00861">861</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00860">860</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -1038,7 +1041,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Translate an av_pair into two strings</p>
+<p>Translate an av_pair into printable strings</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rh</td><td>a handle to parsed configuration. </td></tr>
@@ -1051,7 +1054,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a6">radexample.c</a>.</dd>
+</dl>
 <p>Definition at line <a class="el" href="avpair_8c_source.html#l00718">718</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
@@ -1225,7 +1229,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00599">599</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00602">602</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1262,7 +1266,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00624">624</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00627">627</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1300,7 +1304,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>config option value. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a3">radexample.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="config_8c_source.html#l00579">579</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00582">582</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1325,7 +1329,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Free allocated config values </p>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00936">936</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00939">939</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1352,7 +1356,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>rc_handle on success, NULL on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00343">343</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00347">347</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1377,7 +1381,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00982">982</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00985">985</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1414,7 +1418,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full attribute structure based on the attribute name. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00386">386</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00387">387</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1451,7 +1455,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full value structure based on the value name. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00409">409</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00410">410</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1488,7 +1492,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full vendor structure based on the vendor name. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00431">431</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00432">432</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1513,7 +1517,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00485">485</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00486">486</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1550,7 +1554,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full attribute structure based on the attribute id number. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00363">363</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00364">364</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1594,7 +1598,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full value structure based on the actual value and the associated attribute name. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00464">464</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00465">465</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1631,7 +1635,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the full vendor structure based on the vendor id number. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00447">447</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00448">448</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1689,7 +1693,28 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00782">782</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00785">785</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0e0efb892e51ebf5c2a7e748e12b0b80"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">rc_socket_type rc_get_socket_type </td>
+          <td>(</td>
+          <td class="paramtype">rc_handle *&#160;</td>
+          <td class="paramname"><em>rh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the type of the socket used</p>
+<p>That indicates the type of connection used with the radius server, and can be UDP, TLS or DTLS.</p>
+<dl class="section return"><dt>Returns</dt><dd>the type of the socket </dd></dl>
+
+<p>Definition at line <a class="el" href="config_8c_source.html#l00999">999</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1709,7 +1734,7 @@ Functions</h2></td></tr>
 <p>Initialises new Radius Client handle</p>
 <dl class="section return"><dt>Returns</dt><dd>a new rc_handle (free with rc_destroy). </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00966">966</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00969">969</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1736,7 +1761,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>new rc_handle on success, NULL when failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00568">568</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00571">571</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1774,7 +1799,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>new rc_handle on success, NULL when failure. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a2">radexample.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="config_8c_source.html#l00428">428</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00431">431</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>
@@ -1812,7 +1837,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="dict_8c_source.html#l00035">35</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
+<p>Definition at line <a class="el" href="dict_8c_source.html#l00036">36</a> of file <a class="el" href="dict_8c_source.html">dict.c</a>.</p>
 
 </div>
 </div>
@@ -1863,7 +1888,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OK_RC (0) on success, TIMEOUT_RC on timeout REJECT_RC on acess reject, or negative on failure as return value. </dd></dl>
 
-<p>Definition at line <a class="el" href="sendserver_8c_source.html#l00279">279</a> of file <a class="el" href="sendserver_8c_source.html">sendserver.c</a>.</p>
+<p>Definition at line <a class="el" href="sendserver_8c_source.html#l00278">278</a> of file <a class="el" href="sendserver_8c_source.html">sendserver.c</a>.</p>
 
 </div>
 </div>
@@ -1900,7 +1925,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 when failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="config_8c_source.html#l00644">644</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
+<p>Definition at line <a class="el" href="config_8c_source.html#l00647">647</a> of file <a class="el" href="config_8c_source.html">config.c</a>.</p>
 
 </div>
 </div>

@@ -117,9 +117,11 @@ Functions</h2></td></tr>
 <tr class="separator:ga349f4bec48db04afa4cddf7d1d9fd0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae799681b16f1bd28305b1818d8ee9d7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">rc_check_tls</a> (rc_handle *rh)</td></tr>
 <tr class="separator:gae799681b16f1bd28305b1818d8ee9d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14ea263b20cc188f67e75f24885f23be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls-api.html#ga14ea263b20cc188f67e75f24885f23be">rc_deinit_tls</a> (rc_handle *rh)</td></tr>
+<tr class="memitem:ga14ea263b20cc188f67e75f24885f23be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga14ea263b20cc188f67e75f24885f23be"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>rc_deinit_tls</b> (rc_handle *rh)</td></tr>
 <tr class="separator:ga14ea263b20cc188f67e75f24885f23be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7a391814f9095f70ca8e4ad5cc82e81e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls-api.html#ga7a391814f9095f70ca8e4ad5cc82e81e">rc_init_tls</a> (rc_handle *rh, unsigned flags)</td></tr>
+<tr class="memitem:ga7a391814f9095f70ca8e4ad5cc82e81e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7a391814f9095f70ca8e4ad5cc82e81e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>rc_init_tls</b> (rc_handle *rh, unsigned flags)</td></tr>
 <tr class="separator:ga7a391814f9095f70ca8e4ad5cc82e81e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -140,6 +142,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Check established TLS/DTLS channels for operation</p>
 <p>This function will check whether the channel(s) established for TLS or DTLS are operational, and will re-establish the channel if necessary. If this function fails then the TLS or DTLS state should be considered as disconnected. It must be called at a time when the sessions are not in usage (e.g., in a different thread).</p>
+<p>Note: It is recommended to run this function periodically if you have a DTLS channel since an undetected server reset may result to a black hole behavior of the server.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"></td><td></td></tr>
@@ -147,70 +150,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="tls_8c_source.html#l00454">454</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga14ea263b20cc188f67e75f24885f23be"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rc_deinit_tls </td>
-          <td>(</td>
-          <td class="paramtype">rc_handle *&#160;</td>
-          <td class="paramname"><em>rh</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This function will deinitialize a previously initialed DTLS or TLS session.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rh</td><td>the configuration handle. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="tls_8c_source.html#l00484">484</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ga7a391814f9095f70ca8e4ad5cc82e81e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rc_init_tls </td>
-          <td>(</td>
-          <td class="paramtype">rc_handle *&#160;</td>
-          <td class="paramname"><em>rh</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>flags</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Initialize a configuration for TLS or DTLS</p>
-<p>This function will initialize the handle for TLS or DTLS.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">rh</td><td>a handle to parsed configuration </td></tr>
-    <tr><td class="paramname">flags</td><td>must be zero or SEC_FLAG_DTLS </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
-
-<p>Definition at line <a class="el" href="tls_8c_source.html#l00506">506</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
+<p>Definition at line <a class="el" href="tls_8c_source.html#l00457">457</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
 
 </div>
 </div>
@@ -236,7 +176,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the file descriptor used by the TLS session </dd></dl>
 
-<p>Definition at line <a class="el" href="tls_8c_source.html#l00427">427</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
+<p>Definition at line <a class="el" href="tls_8c_source.html#l00426">426</a> of file <a class="el" href="tls_8c_source.html">tls.c</a>.</p>
 
 </div>
 </div>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9',1,'dict_attr']]]
+  ['miscellaneous_20api',['Miscellaneous API',['../group__misc-api.html',1,'']]],
+  ['main_20api',['Main API',['../group__radcli-api.html',1,'']]]
 ];
