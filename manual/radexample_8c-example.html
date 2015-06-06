@@ -95,7 +95,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="preprocessor">#include        &lt;includes.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include        &lt;radcli.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include        &lt;pathnames.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include        &quot;common.h&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span></div>
 <div class="line">main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
@@ -105,7 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordtype">char</span>            passwd[AUTH_PASS_LEN + 1];</div>
 <div class="line">        <a name="_a0"></a><a class="code" href="structvalue__pair.html">VALUE_PAIR</a>      *send, *received;</div>
 <div class="line">        uint32_t        service;</div>
-<div class="line">        <span class="keywordtype">char</span>            msg[PW_MAX_MSG_SIZE], username_realm[256];</div>
+<div class="line">        <span class="keywordtype">char</span>            username_realm[256];</div>
 <div class="line">        <span class="keywordtype">char</span>            *default_realm;</div>
 <div class="line">        rc_handle       *rh;</div>
 <div class="line"></div>
@@ -125,13 +124,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="comment">/*</span></div>
 <div class="line"><span class="comment">         * Fill in User-Name</span></div>
 <div class="line"><span class="comment">         */</span></div>
-<div class="line">        strncpy(username_realm, username, <span class="keyword">sizeof</span>(username_realm));</div>
-<div class="line"></div>
-<div class="line">        <span class="comment">/* Append default realm */</span></div>
 <div class="line">        <span class="keywordflow">if</span> (default_realm &amp;&amp; default_realm[0] != 0)</div>
 <div class="line">                snprintf(username_realm, <span class="keyword">sizeof</span>(username_realm), <span class="stringliteral">&quot;%s@%s&quot;</span>, username, default_realm);</div>
 <div class="line">        <span class="keywordflow">else</span></div>
-<div class="line">                strcpy(username_realm, username);</div>
+<div class="line">                snprintf(username_realm, <span class="keyword">sizeof</span>(username_realm), <span class="stringliteral">&quot;%s&quot;</span>, username);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (<a name="a4"></a><a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_USER_NAME, username_realm, -1, 0) == NULL)</div>
 <div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
@@ -149,7 +145,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_SERVICE_TYPE, &amp;service, -1, 0) == NULL)</div>
 <div class="line">                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"></div>
-<div class="line">        result = <a name="a5"></a><a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, msg);</div>
+<div class="line">        result = <a name="a5"></a><a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, NULL);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (result == OK_RC) {</div>
 <div class="line">                <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp = received;</div>
