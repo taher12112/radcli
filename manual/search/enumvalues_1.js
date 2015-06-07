@@ -32,6 +32,7 @@ var searchData=
   ['pw_5fconfiguration_5ftoken',['PW_CONFIGURATION_TOKEN',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712cafe374c5f0a9e41b2e25a559ac034fc62',1,'radcli.h']]],
   ['pw_5fconnect_5finfo',['PW_CONNECT_INFO',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca50a32e56789b21b8c99c2d6ae1ddb211',1,'radcli.h']]],
   ['pw_5fcui',['PW_CUI',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca85c6d9d2e6acf0a082b6b54306a5a0ea',1,'radcli.h']]],
+  ['pw_5fdelegated_5fipv6_5fprefix',['PW_DELEGATED_IPV6_PREFIX',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712cadf046d924f65c0726e8f1b8d542f2c02',1,'radcli.h']]],
   ['pw_5fdigest_5falgorithm',['PW_DIGEST_ALGORITHM',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa8cb3bb6b21c3eb7e5ebde34656f54c2',1,'radcli.h']]],
   ['pw_5fdigest_5fattributes',['PW_DIGEST_ATTRIBUTES',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0',1,'radcli.h']]],
   ['pw_5fdigest_5fbody_5fdigest',['PW_DIGEST_BODY_DIGEST',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca68c6fc1a1704dd9872ab84ead763f1cc',1,'radcli.h']]],

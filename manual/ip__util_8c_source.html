@@ -41,9 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -146,9 +144,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">struct </span>servent *svp;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ((svp = getservbyname ((type==<a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>)?<span class="stringliteral">&quot;radius&quot;</span> : <span class="stringliteral">&quot;radacct&quot;</span>, <span class="stringliteral">&quot;udp&quot;</span>)) == NULL)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ((svp = getservbyname ((type==AUTH)?<span class="stringliteral">&quot;radius&quot;</span> : <span class="stringliteral">&quot;radacct&quot;</span>, <span class="stringliteral">&quot;udp&quot;</span>)) == NULL)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> (type==<a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>) ? PW_AUTH_UDP_PORT : PW_ACCT_UDP_PORT;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> (type==AUTH) ? PW_AUTH_UDP_PORT : PW_ACCT_UDP_PORT;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> ntohs ((<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>) svp-&gt;s_port);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
@@ -244,7 +242,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;       <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
-<div class="ttc" id="group__radcli-api_html_gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218"><div class="ttname"><a href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a></div><div class="ttdoc">Request for authentication server. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00075">radcli.h:75</a></div></div>
 <div class="ttc" id="group__misc-api_html_ga4c83ca0ca5eb03103e385ce87046efb0"><div class="ttname"><a href="group__misc-api.html#ga4c83ca0ca5eb03103e385ce87046efb0">rc_getport</a></div><div class="ttdeci">unsigned short rc_getport(int type)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00063">ip_util.c:63</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00567">config.c:567</a></div></div>
 <div class="ttc" id="group__misc-api_html_gae2901e09e8babae97222c3f1b208cebf"><div class="ttname"><a href="group__misc-api.html#gae2901e09e8babae97222c3f1b208cebf">rc_own_hostname</a></div><div class="ttdeci">int rc_own_hostname(char *hostname, int len)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00081">ip_util.c:81</a></div></div>

@@ -41,9 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -110,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">int</span>             result;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">char</span>            username[128];</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">char</span>            passwd[AUTH_PASS_LEN + 1];</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="structvalue__pair.html">VALUE_PAIR</a>      *send, *received;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        VALUE_PAIR      *send, *received;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        uint32_t        service;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">char</span>            username_realm[256];</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">char</span>            *default_realm;</div>
@@ -137,26 +135,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                snprintf(username_realm, <span class="keyword">sizeof</span>(username_realm), <span class="stringliteral">&quot;%s&quot;</span>, username);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cadc18eb247fba5387afc2e37a059b60eb">PW_USER_NAME</a>, username_realm, -1, 0) == NULL)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_USER_NAME, username_realm, -1, 0) == NULL)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">         * Fill in User-Password</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caebe44e88f49622d2255c1af74c153932">PW_USER_PASSWORD</a>, passwd, -1, 0) == NULL)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_USER_PASSWORD, passwd, -1, 0) == NULL)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">         * Fill in Service-Type</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">         */</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        service = PW_AUTHENTICATE_ONLY;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca79ef0f7a811f9196dd2202e5bfc405f3">PW_SERVICE_TYPE</a>, &amp;service, -1, 0) == NULL)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a>(rh, &amp;send, PW_SERVICE_TYPE, &amp;service, -1, 0) == NULL)</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> ERROR_RC;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        result = <a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, NULL);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (result == OK_RC) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp = received;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                VALUE_PAIR *vp = received;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">char</span> name[128];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordtype">char</span> value[128];</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
@@ -176,15 +174,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="ttc" id="group__misc-api_html_gaba387f2f50c56fb5d6ccfe98bb7f65c7"><div class="ttname"><a href="group__misc-api.html#gaba387f2f50c56fb5d6ccfe98bb7f65c7">rc_openlog</a></div><div class="ttdeci">void rc_openlog(char const *ident)</div><div class="ttdef"><b>Definition:</b> <a href="log_8c_source.html#l00029">log.c:29</a></div></div>
-<div class="ttc" id="group__radcli-api_html_gaa4a0d07770e69304684a36850fb0d928"><div class="ttname"><a href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_add(rc_handle const *rh, VALUE_PAIR **list, int attrid, void const *pval, int len, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00038">avpair.c:38</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gaa4a0d07770e69304684a36850fb0d928"><div class="ttname"><a href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_add(rc_handle const *rh, VALUE_PAIR **list, int attrid, void const *pval, int len, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00041">avpair.c:41</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga4ac3f369b4bcc1b1e8302162784b665d"><div class="ttname"><a href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a></div><div class="ttdeci">int rc_auth(rc_handle *rh, uint32_t client_port, VALUE_PAIR *send, VALUE_PAIR **received, char *msg)</div><div class="ttdef"><b>Definition:</b> <a href="buildreq_8c_source.html#l00198">buildreq.c:198</a></div></div>
-<div class="ttc" id="structvalue__pair_html"><div class="ttname"><a href="structvalue__pair.html">value_pair</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00421">radcli.h:421</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00567">config.c:567</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca79ef0f7a811f9196dd2202e5bfc405f3"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca79ef0f7a811f9196dd2202e5bfc405f3">PW_SERVICE_TYPE</a></div><div class="ttdoc">Its type is integer. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00150">radcli.h:150</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga0cf236cc5c5d4938334c97efc75a4730"><div class="ttname"><a href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a></div><div class="ttdeci">rc_handle * rc_read_config(char const *filename)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00433">config.c:433</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712cadc18eb247fba5387afc2e37a059b60eb"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cadc18eb247fba5387afc2e37a059b60eb">PW_USER_NAME</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00145">radcli.h:145</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712caebe44e88f49622d2255c1af74c153932"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caebe44e88f49622d2255c1af74c153932">PW_USER_PASSWORD</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00146">radcli.h:146</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga77f9da4f29bffb60ad29c160a0fcbed7"><div class="ttname"><a href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a></div><div class="ttdeci">int rc_avpair_tostr(rc_handle const *rh, VALUE_PAIR *pair, char *name, int ln, char *value, int lv)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00721">avpair.c:721</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga77f9da4f29bffb60ad29c160a0fcbed7"><div class="ttname"><a href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a></div><div class="ttdeci">int rc_avpair_tostr(rc_handle const *rh, VALUE_PAIR *pair, char *name, int ln, char *value, int lv)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00751">avpair.c:751</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

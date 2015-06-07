@@ -41,9 +41,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -508,7 +506,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        tls_st *st;</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> (rh-&gt;so_type != <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efaed569722631b08e05724ee920ca65767">RC_SOCKET_TLS</a> &amp;&amp; rh-&gt;so_type != <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efad0ebffed8afb69815f21efa213c589b9">RC_SOCKET_DTLS</a>)</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        <span class="keywordflow">if</span> (rh-&gt;so_type != RC_SOCKET_TLS &amp;&amp; rh-&gt;so_type != RC_SOCKET_DTLS)</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;                <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        st = rh-&gt;so.ptr;</div>
@@ -525,7 +523,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        time_t now = time(0);</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <span class="keywordtype">int</span> ret;</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordflow">if</span> (rh-&gt;so_type != <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efaed569722631b08e05724ee920ca65767">RC_SOCKET_TLS</a> &amp;&amp; rh-&gt;so_type != <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efad0ebffed8afb69815f21efa213c589b9">RC_SOCKET_DTLS</a>)</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordflow">if</span> (rh-&gt;so_type != RC_SOCKET_TLS &amp;&amp; rh-&gt;so_type != RC_SOCKET_DTLS)</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        st = rh-&gt;so.ptr;</div>
@@ -579,17 +577,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *cert_file = <a class="code" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a>(rh, <span class="stringliteral">&quot;tls-cert-file&quot;</span>);</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *key_file = <a class="code" href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a>(rh, <span class="stringliteral">&quot;tls-key-file&quot;</span>);</div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *pskkey = NULL;</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *authservers;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        SERVER *authservers;</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;        <span class="keywordtype">char</span> hostname[256];     <span class="comment">/* server&#39;s hostname */</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        <span class="keywordtype">unsigned</span> port;          <span class="comment">/* server&#39;s port */</span></div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        memset(&amp;rh-&gt;so, 0, <span class="keyword">sizeof</span>(rh-&gt;so));</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordflow">if</span> (flags &amp; SEC_FLAG_DTLS) {</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                rh-&gt;so_type = <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efad0ebffed8afb69815f21efa213c589b9">RC_SOCKET_DTLS</a>;</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;                rh-&gt;so_type = RC_SOCKET_DTLS;</div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;                rh-&gt;so.static_secret = DEFAULT_DTLS_SECRET;</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                rh-&gt;so_type = <a class="code" href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efaed569722631b08e05724ee920ca65767">RC_SOCKET_TLS</a>;</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;                rh-&gt;so_type = RC_SOCKET_TLS;</div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;                rh-&gt;so.static_secret = DEFAULT_TLS_SECRET;</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;        }</div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;</div>
@@ -757,11 +755,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;</div>
 <div class="ttc" id="group__radcli-api_html_gaf350649b537494e8971c42dae5d6832b"><div class="ttname"><a href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a></div><div class="ttdeci">SERVER * rc_conf_srv(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00612">config.c:612</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaa65aaa1a37430bb2a4b971dbb123c36e"><div class="ttname"><a href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a></div><div class="ttdeci">int rc_conf_int(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00587">config.c:587</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ggaf67aec1f3d44fd0e24444c829ed190efaed569722631b08e05724ee920ca65767"><div class="ttname"><a href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efaed569722631b08e05724ee920ca65767">RC_SOCKET_TLS</a></div><div class="ttdoc">TLS socket. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00103">radcli.h:103</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00567">config.c:567</a></div></div>
-<div class="ttc" id="structserver_html"><div class="ttname"><a href="structserver.html">server</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00091">radcli.h:91</a></div></div>
 <div class="ttc" id="group__misc-api_html_gaf68601b86a8c0a184b699e5f51db912e"><div class="ttname"><a href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a></div><div class="ttdeci">void rc_own_bind_addr(rc_handle *rh, struct sockaddr_storage *lia)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00161">ip_util.c:161</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ggaf67aec1f3d44fd0e24444c829ed190efad0ebffed8afb69815f21efa213c589b9"><div class="ttname"><a href="group__radcli-api.html#ggaf67aec1f3d44fd0e24444c829ed190efad0ebffed8afb69815f21efa213c589b9">RC_SOCKET_DTLS</a></div><div class="ttdoc">DTLS socket. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00104">radcli.h:104</a></div></div>
 <div class="ttc" id="group__tls-api_html_ga349f4bec48db04afa4cddf7d1d9fd0e2"><div class="ttname"><a href="group__tls-api.html#ga349f4bec48db04afa4cddf7d1d9fd0e2">rc_tls_fd</a></div><div class="ttdeci">int rc_tls_fd(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00426">tls.c:426</a></div></div>
 <div class="ttc" id="group__tls-api_html_gae799681b16f1bd28305b1818d8ee9d7c"><div class="ttname"><a href="group__tls-api.html#gae799681b16f1bd28305b1818d8ee9d7c">rc_check_tls</a></div><div class="ttdeci">int rc_check_tls(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="tls_8c_source.html#l00457">tls.c:457</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

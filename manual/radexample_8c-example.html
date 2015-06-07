@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        <span class="keywordtype">int</span>             result;</div>
 <div class="line">        <span class="keywordtype">char</span>            username[128];</div>
 <div class="line">        <span class="keywordtype">char</span>            passwd[AUTH_PASS_LEN + 1];</div>
-<div class="line">        <a name="_a0"></a><a class="code" href="structvalue__pair.html">VALUE_PAIR</a>      *send, *received;</div>
+<div class="line">        <a name="_a0"></a><a class="code" href="structrc__value__pair.html">VALUE_PAIR</a>      *send, *received;</div>
 <div class="line">        uint32_t        service;</div>
 <div class="line">        <span class="keywordtype">char</span>            username_realm[256];</div>
 <div class="line">        <span class="keywordtype">char</span>            *default_realm;</div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        result = <a name="a8"></a><a class="code" href="group__radcli-api.html#ga4ac3f369b4bcc1b1e8302162784b665d">rc_auth</a>(rh, 0, send, &amp;received, NULL);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> (result == OK_RC) {</div>
-<div class="line">                <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp = received;</div>
+<div class="line">                <a class="code" href="structrc__value__pair.html">VALUE_PAIR</a> *vp = received;</div>
 <div class="line">                <span class="keywordtype">char</span> name[128];</div>
 <div class="line">                <span class="keywordtype">char</span> value[128];</div>
 <div class="line"></div>

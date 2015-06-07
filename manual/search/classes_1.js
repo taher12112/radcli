@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['send_5fdata',['send_data',['../structsend__data.html',1,'']]],
-  ['server',['server',['../structserver.html',1,'']]]
+  ['rc_5fvalue_5fpair',['rc_value_pair',['../structrc__value__pair.html',1,'']]]
 ];
