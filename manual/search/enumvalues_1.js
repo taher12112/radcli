@@ -45,7 +45,6 @@ var searchData=
   ['pw_5fdigest_5furi',['PW_DIGEST_URI',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ba129afe3f83f2ebb89e50c56740a6b',1,'radcli.h']]],
   ['pw_5fdigest_5fuser_5fname',['PW_DIGEST_USER_NAME',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca33f81986dfb713e870b683dbd6bfb048',1,'radcli.h']]],
   ['pw_5fdns_5fserver_5fipv6_5faddress',['PW_DNS_SERVER_IPV6_ADDRESS',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca72466afdb52f60f51088fb4e80d41ce1',1,'radcli.h']]],
-  ['pw_5fdumb',['PW_DUMB',['../group__radcli-api.html#ga8119867a9ab0a5405b6177c406bda44a',1,'radcli.h']]],
   ['pw_5feap_5fkey_5fname',['PW_EAP_KEY_NAME',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712cab2a3c16fe20bd801fdfd6539b09b081a',1,'radcli.h']]],
   ['pw_5feap_5fmessage',['PW_EAP_MESSAGE',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa50fd4ed1aa81aeb28cce92801708d90',1,'radcli.h']]],
   ['pw_5fegress_5fvlan_5fname',['PW_EGRESS_VLAN_NAME',['../group__radcli-api.html#ggaead935421b5583457637004ac1ce712cad6c86b04d90eeb554d316731bbc878c8',1,'radcli.h']]],

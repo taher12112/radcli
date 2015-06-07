@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['timeout',['timeout',['../structsend__data.html#a126b1f39be54af59837febb2366de240',1,'send_data']]],
-  ['tls_2fdtls_20api',['TLS/DTLS API',['../group__tls-api.html',1,'']]],
-  ['type',['type',['../structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e',1,'dict_attr::type()'],['../structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0',1,'value_pair::type()']]]
+  ['secret',['secret',['../structsend__data.html#a37e8a1ed1891bfec9b4d6b78246fe008',1,'send_data']]],
+  ['send_5fdata',['send_data',['../structsend__data.html',1,'']]],
+  ['send_5fpairs',['send_pairs',['../structsend__data.html#a9ca1d0d8ca8d22e20b41598a8805a222',1,'send_data']]],
+  ['seq_5fnbr',['seq_nbr',['../structsend__data.html#a38bc1cbf304519f98d81786b03f41d05',1,'send_data']]],
+  ['server',['server',['../structserver.html',1,'server'],['../structsend__data.html#a74350ed413a4e50ac953add1a8585073',1,'send_data::server()']]],
+  ['strvalue',['strvalue',['../structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac',1,'value_pair']]],
+  ['svc_5fport',['svc_port',['../structsend__data.html#a63f796b39cf87868a7829cfc97412afd',1,'send_data']]]
 ];

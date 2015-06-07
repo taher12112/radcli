@@ -106,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;config.h&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;includes.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;radcli.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;radcli/radcli.h&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;util.h&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">   38</a></span>&#160;<a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *<a class="code" href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a> (rc_handle <span class="keyword">const</span> *rh, <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> **list, <span class="keywordtype">int</span> attrid, <span class="keywordtype">void</span> <span class="keyword">const</span> *pval, <span class="keywordtype">int</span> len, <span class="keywordtype">int</span> vendorpec)</div>
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">switch</span> (vp-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_STRING:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73">PW_TYPE_STRING</a>:</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        <span class="keywordflow">if</span> (len == -1)</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                len = (uint32_t)strlen((<span class="keywordtype">char</span> <span class="keyword">const</span> *)pval);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        <span class="keywordflow">if</span> (len &gt; AUTH_STRING_LEN) {</div>
@@ -141,12 +141,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = len;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_DATE:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_INTEGER:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_IPADDR:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8">PW_TYPE_DATE</a>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923">PW_TYPE_INTEGER</a>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493">PW_TYPE_IPADDR</a>:</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = * (uint32_t *) pval;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_IPV6ADDR:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca">PW_TYPE_IPV6ADDR</a>:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="keywordflow">if</span> (len != 16) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_assign: bad IPv6 length&quot;</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                <span class="keywordflow">return</span> -1;</div>
@@ -155,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = len;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">case</span> PW_TYPE_IPV6PREFIX:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169">PW_TYPE_IPV6PREFIX</a>:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">if</span> (len &lt; 2 || len &gt; 18) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_assign: bad IPv6 prefix length&quot;</span>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                <span class="keywordflow">return</span> -1;</div>
@@ -190,32 +190,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> ((vp = malloc (<span class="keyword">sizeof</span> (<a class="code" href="structvalue__pair.html">VALUE_PAIR</a>))) != NULL)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                strlcpy (vp-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>, pda-&gt;<a class="code" href="structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9">name</a>, sizeof (vp-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>));</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> = attrid;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> = attrid;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                vp-&gt;next = NULL;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                vp-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = pda-&gt;<a class="code" href="structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e">type</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                vp-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = pda-&gt;<a class="code" href="structdict__attr.html#a4934aeb8df25acaa59ac9c44bb4662f0">type</a>;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#ga9088ae45ec4d5ae0dc9eeed2c66afcde">rc_avpair_assign</a> (vp, pval, len) == 0)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                        <span class="comment">/* XXX: Fix up Digest-Attributes */</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        <span class="keywordflow">switch</span> (vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a>) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_REALM:</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_NONCE:</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_METHOD:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_URI:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_QOP:</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_ALGORITHM:</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_BODY_DIGEST:</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_CNONCE:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_NONCE_COUNT:</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_USER_NAME:</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                        <span class="keywordflow">switch</span> (vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a>) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08">PW_DIGEST_REALM</a>:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca0bb32969cd79fa26995bc481643e57ea">PW_DIGEST_NONCE</a>:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cac2854f1817eb583f755f5cb1c32bab8d">PW_DIGEST_METHOD</a>:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ba129afe3f83f2ebb89e50c56740a6b">PW_DIGEST_URI</a>:</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ca4f59aaaf102393aa7cf81285f3924">PW_DIGEST_QOP</a>:</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa8cb3bb6b21c3eb7e5ebde34656f54c2">PW_DIGEST_ALGORITHM</a>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca68c6fc1a1704dd9872ab84ead763f1cc">PW_DIGEST_BODY_DIGEST</a>:</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cabcc4a90c0c3e6d95003c3f96fb3be89c">PW_DIGEST_CNONCE</a>:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa45e2ae25041e2cd3db3929ed4662ecd">PW_DIGEST_NONCE_COUNT</a>:</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca33f81986dfb713e870b683dbd6bfb048">PW_DIGEST_USER_NAME</a>:</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                <span class="comment">/* overlapping! */</span></div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                <span class="keywordflow">if</span> (vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> &gt; AUTH_STRING_LEN - 2)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                        vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = AUTH_STRING_LEN - 2;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                memmove(&amp;vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[2], &amp;vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0], vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0] = vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> - PW_DIGEST_REALM + 1;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0] = vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> - <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08">PW_DIGEST_REALM</a> + 1;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> += 2;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[1] = vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>;</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[vp-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> = PW_DIGEST_ATTRIBUTES;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> = <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0">PW_DIGEST_ATTRIBUTES</a>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                        }</div>
@@ -270,7 +270,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        attrlen -= 2;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <span class="comment">/* VSA */</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">if</span> (attribute == PW_VENDOR_SPECIFIC) {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <span class="keywordflow">if</span> (attribute == <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cae3c705758547614ba20d1e5e9982c86e">PW_VENDOR_SPECIFIC</a>) {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                <span class="keywordflow">if</span> (attrlen &lt; 4) {</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received VSA &quot;</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                            <span class="stringliteral">&quot;attribute with invalid length&quot;</span>);</div>
@@ -322,23 +322,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        rpair-&gt;next = pair;</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        pair = rpair;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        strcpy(pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>, attr-&gt;<a class="code" href="structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9">name</a>);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> = attr-&gt;<a class="code" href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">value</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = attr-&gt;<a class="code" href="structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e">type</a>;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> = attr-&gt;<a class="code" href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">value</a>;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = attr-&gt;<a class="code" href="structdict__attr.html#a4934aeb8df25acaa59ac9c44bb4662f0">type</a>;</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">switch</span> (attr-&gt;<a class="code" href="structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e">type</a>) {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_STRING:</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">switch</span> (attr-&gt;<a class="code" href="structdict__attr.html#a4934aeb8df25acaa59ac9c44bb4662f0">type</a>) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73">PW_TYPE_STRING</a>:</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                memcpy(pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, (<span class="keywordtype">char</span> *)ptr, (<span class="keywordtype">size_t</span>)attrlen);</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[attrlen] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = attrlen;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_INTEGER:</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923">PW_TYPE_INTEGER</a>:</div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keywordflow">if</span> (attrlen != 4) {</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received INT &quot;</span></div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                            <span class="stringliteral">&quot;attribute with invalid length&quot;</span>);</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                        <span class="keywordflow">goto</span> skipit;</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                }</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_IPADDR:</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493">PW_TYPE_IPADDR</a>:</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="keywordflow">if</span> (attrlen != 4) {</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received IPADDR&quot;</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                            <span class="stringliteral">&quot; attribute with invalid length&quot;</span>);</div>
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                memcpy((<span class="keywordtype">char</span> *)&amp;lvalue, (<span class="keywordtype">char</span> *)ptr, 4);</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = ntohl(lvalue);</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_IPV6ADDR:</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca">PW_TYPE_IPV6ADDR</a>:</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                <span class="keywordflow">if</span> (attrlen != 16) {</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received IPV6ADDR&quot;</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                            <span class="stringliteral">&quot; attribute with invalid length&quot;</span>);</div>
@@ -356,7 +356,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                memcpy(pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, (<span class="keywordtype">char</span> *)ptr, 16);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = attrlen;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_IPV6PREFIX:</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169">PW_TYPE_IPV6PREFIX</a>:</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <span class="keywordflow">if</span> (attrlen &gt; 18 || attrlen &lt; 2) {</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received IPV6PREFIX&quot;</span></div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                            <span class="stringliteral">&quot; attribute with invalid length: %d&quot;</span>, attrlen);</div>
@@ -365,7 +365,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                memcpy(pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, (<span class="keywordtype">char</span> *)ptr, attrlen);</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = attrlen;</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">case</span> PW_TYPE_DATE:</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8">PW_TYPE_DATE</a>:</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                <span class="keywordflow">if</span> (attrlen != 4) {</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_gen: received DATE &quot;</span></div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;                            <span class="stringliteral">&quot;attribute with invalid length&quot;</span>);</div>
@@ -392,8 +392,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
 <div class="line"><a name="l00353"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gaa08db12acbc9aa7d9a32503f95c380cb">  353</a></span>&#160;<a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *<a class="code" href="group__radcli-api.html#gaa08db12acbc9aa7d9a32503f95c380cb">rc_avpair_get</a> (<a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp, <span class="keywordtype">int</span> attrid, <span class="keywordtype">int</span> vendorpec)</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;{</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">for</span> (; vp != NULL &amp;&amp; !(ATTRID(vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a>) == ATTRID(attrid) &amp;&amp;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            VENDOR(vp-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a>) == vendorpec); vp = vp-&gt;next)</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">for</span> (; vp != NULL &amp;&amp; !(ATTRID(vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a>) == ATTRID(attrid) &amp;&amp;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            VENDOR(vp-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a>) == vendorpec); vp = vp-&gt;next)</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        {</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        }</div>
@@ -566,18 +566,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                                <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                        }</div>
 <div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                        strcpy (pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>, attr-&gt;<a class="code" href="structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9">name</a>);</div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> = attr-&gt;<a class="code" href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">value</a>;</div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = attr-&gt;<a class="code" href="structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e">type</a>;</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> = attr-&gt;<a class="code" href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">value</a>;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a> = attr-&gt;<a class="code" href="structdict__attr.html#a4934aeb8df25acaa59ac9c44bb4662f0">type</a>;</div>
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                        <span class="keywordflow">switch</span> (pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>)</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                        {</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_STRING:</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73">PW_TYPE_STRING</a>:</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                                strcpy (pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, valstr);</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = (uint32_t)strlen(valstr);</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_INTEGER:</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923">PW_TYPE_INTEGER</a>:</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                                <span class="keywordflow">if</span> (isdigit (*valstr))</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;                                {</div>
 <div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;                                        pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = atoi (valstr);</div>
@@ -602,7 +602,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                                }</div>
 <div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_IPADDR:</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493">PW_TYPE_IPADDR</a>:</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                <span class="keywordflow">if</span> (inet_pton(AF_INET, valstr, &amp;pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>) == 0) {</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_parse: invalid IPv4 address %s&quot;</span>, valstr);</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                        free(pair);</div>
@@ -612,7 +612,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = ntohl(pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_IPV6ADDR:</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca">PW_TYPE_IPV6ADDR</a>:</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                                <span class="keywordflow">if</span> (inet_pton(AF_INET6, valstr, pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>) == 0) {</div>
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_parse: invalid IPv6 address %s&quot;</span>, valstr);</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                                        free(pair);</div>
@@ -621,7 +621,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = 16;</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_IPV6PREFIX:</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169">PW_TYPE_IPV6PREFIX</a>:</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                                p = strchr(valstr, <span class="charliteral">&#39;/&#39;</span>);</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                                <span class="keywordflow">if</span> (p == NULL) {</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_parse: invalid IPv6 prefix %s&quot;</span>, valstr);</div>
@@ -641,7 +641,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = 2+16;</div>
 <div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                            <span class="keywordflow">case</span> PW_TYPE_DATE:</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8">PW_TYPE_DATE</a>:</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                                timeval = time (0);</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                                tm = localtime (&amp;timeval);</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                                tm-&gt;tm_hour = 0;</div>
@@ -666,232 +666,253 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                        }</div>
 <div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;</div>
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                        <span class="comment">/* XXX: Fix up Digest-Attributes */</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        <span class="keywordflow">switch</span> (pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a>) {</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_REALM:</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_NONCE:</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_METHOD:</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_URI:</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_QOP:</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_ALGORITHM:</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_BODY_DIGEST:</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_CNONCE:</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_NONCE_COUNT:</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        <span class="keywordflow">case</span> PW_DIGEST_USER_NAME:</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        <span class="keywordflow">switch</span> (pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a>) {</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08">PW_DIGEST_REALM</a>:</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca0bb32969cd79fa26995bc481643e57ea">PW_DIGEST_NONCE</a>:</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cac2854f1817eb583f755f5cb1c32bab8d">PW_DIGEST_METHOD</a>:</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ba129afe3f83f2ebb89e50c56740a6b">PW_DIGEST_URI</a>:</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ca4f59aaaf102393aa7cf81285f3924">PW_DIGEST_QOP</a>:</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa8cb3bb6b21c3eb7e5ebde34656f54c2">PW_DIGEST_ALGORITHM</a>:</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca68c6fc1a1704dd9872ab84ead763f1cc">PW_DIGEST_BODY_DIGEST</a>:</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cabcc4a90c0c3e6d95003c3f96fb3be89c">PW_DIGEST_CNONCE</a>:</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa45e2ae25041e2cd3db3929ed4662ecd">PW_DIGEST_NONCE_COUNT</a>:</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca33f81986dfb713e870b683dbd6bfb048">PW_DIGEST_USER_NAME</a>:</div>
 <div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                                <span class="comment">/* overlapping! */</span></div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                                <span class="keywordflow">if</span> (pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> &gt; AUTH_STRING_LEN - 2)</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;                                        pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> = AUTH_STRING_LEN - 2;</div>
 <div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                                memmove(&amp;pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[2], &amp;pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0], pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0] = pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> - PW_DIGEST_REALM + 1;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[0] = pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> - <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08">PW_DIGEST_REALM</a> + 1;</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> += 2;</div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[1] = pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>;</div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> = PW_DIGEST_ATTRIBUTES;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                        }</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                        pair-&gt;next = NULL;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                        <span class="keywordflow">if</span> (*first_pair == NULL)</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                        {</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                                *first_pair = pair;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        }</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                        {</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                                link = *first_pair;</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                                <span class="keywordflow">while</span> (link-&gt;next != NULL)</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                                {</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                                        link = link-&gt;next;</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                                }</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                                link-&gt;next = pair;</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                        }</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                        mode = PARSE_MODE_NAME;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                                pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> = <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0">PW_DIGEST_ATTRIBUTES</a>;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                        }</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                        pair-&gt;next = NULL;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                        <span class="keywordflow">if</span> (*first_pair == NULL)</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                        {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;                                *first_pair = pair;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;                        }</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                        {</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                                link = *first_pair;</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;                                <span class="keywordflow">while</span> (link-&gt;next != NULL)</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                                {</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                                        link = link-&gt;next;</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                                }</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                                link-&gt;next = pair;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                        }</div>
 <div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                    <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                        mode = PARSE_MODE_NAME;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                }</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        }</div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;}</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;</div>
-<div class="line"><a name="l00718"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">  718</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a> (rc_handle <span class="keyword">const</span> *rh, <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *pair, <span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> ln, <span class="keywordtype">char</span> *value, <span class="keywordtype">int</span> lv)</div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;{</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <a class="code" href="structdict__value.html">DICT_VALUE</a>     *dval;</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        <span class="keyword">struct </span>in_addr  inad;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>  *ptr;</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    pos;</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        *name = *value = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;        <span class="keywordflow">if</span> (!pair || pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>[0] == <span class="charliteral">&#39;\0&#39;</span>) {</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_tostr: pair is NULL or empty&quot;</span>);</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        }</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;        strlcpy(name, pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>, (<span class="keywordtype">size_t</span>) ln);</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;        <span class="keywordflow">switch</span> (pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>)</div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        {</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_STRING:</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                lv--;</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                pos = 0;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *) pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>;</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                if (pair-&gt;<a class="code" href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">attribute</a> == PW_DIGEST_ATTRIBUTES) {</div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[*(ptr + 1)] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                        ptr += 2;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                }</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                <span class="keywordflow">while</span> (*ptr != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                        <span class="keywordflow">if</span> (!(isprint (*ptr)))</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                        {</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                                <span class="keywordflow">if</span> (lv &gt;= 4) {</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                                        snprintf (&amp;value[pos], lv, <span class="stringliteral">&quot;\\%03o&quot;</span>, *ptr);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                                        pos += 4;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                                        lv -= 4;</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                }</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                        }</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                        {</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                                <span class="keywordflow">if</span> (lv &gt; 0) {</div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                                        value[pos++] = *ptr;</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                                        lv--;</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                                }</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                        }</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                        ptr++;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                }</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                <span class="keywordflow">if</span> (lv &gt; 0)</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        value[pos++] = 0;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                        value[pos-1] = 0;</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_INTEGER:</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                dval = <a class="code" href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a> (rh, pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>, pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>);</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                <span class="keywordflow">if</span> (dval != NULL)</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                {</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                        strlcpy(value, dval-&gt;name, (<span class="keywordtype">size_t</span>) lv);</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                }</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                {</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                        snprintf(value, lv, <span class="stringliteral">&quot;%ld&quot;</span>, (<span class="keywordtype">long</span> <span class="keywordtype">int</span>)pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                }</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_IPADDR:</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                inad.s_addr = htonl(pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;                strlcpy (value, inet_ntoa (inad), (<span class="keywordtype">size_t</span>) lv);</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_IPV6ADDR:</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                <span class="keywordflow">if</span> (inet_ntop(AF_INET6, pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, value, lv) == NULL)</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_IPV6PREFIX: {</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                uint8_t ip[16];</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                uint8_t txt[48];</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                <span class="keywordflow">if</span> (pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> &lt; 2)</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                memset(ip, 0, <span class="keyword">sizeof</span>(ip));</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                memcpy(ip, pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>+2, pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>-2);</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;                        mode = PARSE_MODE_NAME;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;                        mode = PARSE_MODE_NAME;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                }</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;        }</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;}</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;</div>
+<div class="line"><a name="l00721"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">  721</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a> (rc_handle <span class="keyword">const</span> *rh, <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *pair, <span class="keywordtype">char</span> *name, <span class="keywordtype">int</span> ln, <span class="keywordtype">char</span> *value, <span class="keywordtype">int</span> lv)</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;{</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;        <a class="code" href="structdict__value.html">DICT_VALUE</a>     *dval;</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;        <span class="keyword">struct </span>in_addr  inad;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>  *ptr;</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    pos;</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;        *name = *value = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;        <span class="keywordflow">if</span> (!pair || pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>[0] == <span class="charliteral">&#39;\0&#39;</span>) {</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_tostr: pair is NULL or empty&quot;</span>);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;        }</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;        strlcpy(name, pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>, (<span class="keywordtype">size_t</span>) ln);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;        <span class="keywordflow">switch</span> (pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>)</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;        {</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73">PW_TYPE_STRING</a>:</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                lv--;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                pos = 0;</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *) pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>;</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                if (pair-&gt;<a class="code" href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">attribute</a> == <a class="code" href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0">PW_DIGEST_ATTRIBUTES</a>) {</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;                        pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[*(ptr + 1)] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                        ptr += 2;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;                }</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;                <span class="keywordflow">while</span> (*ptr != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;                {</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                        <span class="keywordflow">if</span> (!(isprint (*ptr)))</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                        {</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                                <span class="keywordflow">if</span> (lv &gt;= 4) {</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;                                        snprintf (&amp;value[pos], lv, <span class="stringliteral">&quot;\\%03o&quot;</span>, *ptr);</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;                                        pos += 4;</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                                        lv -= 4;</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;                                }</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;                        }</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;                        {</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;                                <span class="keywordflow">if</span> (lv &gt; 0) {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;                                        value[pos++] = *ptr;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;                                        lv--;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;                                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;                                }</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                        }</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;                        ptr++;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                }</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                <span class="keywordflow">if</span> (lv &gt; 0)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                        value[pos++] = 0;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                        value[pos-1] = 0;</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923">PW_TYPE_INTEGER</a>:</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                dval = <a class="code" href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a> (rh, pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>, pair-&gt;<a class="code" href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">name</a>);</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                <span class="keywordflow">if</span> (dval != NULL)</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;                {</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;                        strlcpy(value, dval-&gt;name, (<span class="keywordtype">size_t</span>) lv);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;                }</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;                {</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;                        snprintf(value, lv, <span class="stringliteral">&quot;%ld&quot;</span>, (<span class="keywordtype">long</span> <span class="keywordtype">int</span>)pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;                }</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493">PW_TYPE_IPADDR</a>:</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                inad.s_addr = htonl(pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>);</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;                strlcpy (value, inet_ntoa (inad), (<span class="keywordtype">size_t</span>) lv);</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca">PW_TYPE_IPV6ADDR</a>:</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                <span class="keywordflow">if</span> (inet_ntop(AF_INET6, pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>, value, lv) == NULL)</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169">PW_TYPE_IPV6PREFIX</a>: {</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                uint8_t ip[16];</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                uint8_t txt[48];</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                <span class="keywordflow">if</span> (pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a> &lt; 2)</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                <span class="keywordflow">if</span> (inet_ntop(AF_INET6, ip, (<span class="keywordtype">void</span>*)txt, <span class="keyword">sizeof</span>(txt)) == NULL)</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                snprintf(value, lv, <span class="stringliteral">&quot;%s/%u&quot;</span>, txt, (<span class="keywordtype">unsigned</span>)pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[1]);</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;            }</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;            <span class="keywordflow">case</span> PW_TYPE_DATE:</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                strftime (value, lv, <span class="stringliteral">&quot;%m/%d/%y %H:%M:%S&quot;</span>,</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;                          gmtime ((time_t *) &amp; pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>));</div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_tostr: unknown attribute type %d&quot;</span>, pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>);</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;                <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;        }</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;}</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                memset(ip, 0, <span class="keyword">sizeof</span>(ip));</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                memcpy(ip, pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>+2, pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>-2);</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                <span class="keywordflow">if</span> (inet_ntop(AF_INET6, ip, (<span class="keywordtype">void</span>*)txt, <span class="keyword">sizeof</span>(txt)) == NULL)</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                snprintf(value, lv, <span class="stringliteral">&quot;%s/%u&quot;</span>, txt, (<span class="keywordtype">unsigned</span>)pair-&gt;<a class="code" href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">strvalue</a>[1]);</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            }</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8">PW_TYPE_DATE</a>:</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;                strftime (value, lv, <span class="stringliteral">&quot;%m/%d/%y %H:%M:%S&quot;</span>,</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;                          gmtime ((time_t *) &amp; pair-&gt;<a class="code" href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">lvalue</a>));</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_tostr: unknown attribute type %d&quot;</span>, pair-&gt;<a class="code" href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">type</a>);</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;                <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        }</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;</div>
-<div class="line"><a name="l00834"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">  834</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a>(rc_handle <span class="keyword">const</span> *rh, <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *pair, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> buf_len)</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;{</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;        <span class="keywordtype">size_t</span> len, nlen;</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp;</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;        <span class="keywordtype">char</span> name[33], value[256];</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        len = 0;</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keywordflow">for</span> (vp = pair; vp != NULL; vp = vp-&gt;next) {</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a>(rh, vp, name, <span class="keyword">sizeof</span>(name), value,</div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;                    <span class="keyword">sizeof</span>(value)) == -1)</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;                        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                nlen = len + 32 + 3 + strlen(value) + 2 + 2;</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                <span class="keywordflow">if</span>(nlen&lt;buf_len-1) {</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                        sprintf(buf + len, <span class="stringliteral">&quot;%-32s = &#39;%s&#39;\n&quot;</span>, name, value);</div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">return</span> buf;</div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                len = nlen - 1;</div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        }</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;        <span class="keywordflow">return</span> buf;</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;}</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;</div>
-<div class="line"><a name="l00860"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">  860</a></span>&#160;<a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *<a class="code" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a>(rc_handle <span class="keyword">const</span> *rh, FILE *input)</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;{</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp = NULL;</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordtype">char</span> buffer[1024], *q;</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <span class="keywordflow">while</span> (fgets(buffer, <span class="keyword">sizeof</span>(buffer), input) != NULL)</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        {</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;                q = buffer;</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;                <span class="keywordflow">while</span>(*q &amp;&amp; isspace(*q)) q++;</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;                <span class="keywordflow">if</span> ((*q == <span class="charliteral">&#39;\n&#39;</span>) || (*q == <span class="charliteral">&#39;#&#39;</span>) || (*q == <span class="charliteral">&#39;\0&#39;</span>))</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;}</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;</div>
+<div class="line"><a name="l00837"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">  837</a></span>&#160;<span class="keywordtype">char</span> *<a class="code" href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a>(rc_handle <span class="keyword">const</span> *rh, <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *pair, <span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> buf_len)</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;{</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;        <span class="keywordtype">size_t</span> len, nlen;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp;</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;        <span class="keywordtype">char</span> name[33], value[256];</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;        len = 0;</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        <span class="keywordflow">for</span> (vp = pair; vp != NULL; vp = vp-&gt;next) {</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a>(rh, vp, name, <span class="keyword">sizeof</span>(name), value,</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                    <span class="keyword">sizeof</span>(value)) == -1)</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;                        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                nlen = len + 32 + 3 + strlen(value) + 2 + 2;</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                <span class="keywordflow">if</span>(nlen&lt;buf_len-1) {</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;                        sprintf(buf + len, <span class="stringliteral">&quot;%-32s = &#39;%s&#39;\n&quot;</span>, name, value);</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;                len = nlen - 1;</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;        }</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;        <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;}</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;</div>
+<div class="line"><a name="l00863"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">  863</a></span>&#160;<a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *<a class="code" href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a>(rc_handle <span class="keyword">const</span> *rh, FILE *input)</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;{</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;        <a class="code" href="structvalue__pair.html">VALUE_PAIR</a> *vp = NULL;</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        <span class="keywordtype">char</span> buffer[1024], *q;</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;        <span class="keywordflow">while</span> (fgets(buffer, <span class="keyword">sizeof</span>(buffer), input) != NULL)</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        {</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;                q = buffer;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;                <span class="keywordflow">while</span>(*q &amp;&amp; isspace(*q)) q++;</div>
 <div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#ga9718df79e6fdb78c06abf9e33ae98616">rc_avpair_parse</a>(rh, q, &amp;vp) &lt; 0) {</div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_readin: malformed attribute: %s&quot;</span>, buffer);</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;                        <a class="code" href="group__radcli-api.html#ga5f61f24404bf5529e53a58b31c04c65e">rc_avpair_free</a>(vp);</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                }</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;        }</div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;        <span class="keywordflow">return</span> vp;</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;}</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;                <span class="keywordflow">if</span> ((*q == <span class="charliteral">&#39;\n&#39;</span>) || (*q == <span class="charliteral">&#39;#&#39;</span>) || (*q == <span class="charliteral">&#39;\0&#39;</span>))</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="group__radcli-api.html#ga9718df79e6fdb78c06abf9e33ae98616">rc_avpair_parse</a>(rh, q, &amp;vp) &lt; 0) {</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;                        rc_log(LOG_ERR, <span class="stringliteral">&quot;rc_avpair_readin: malformed attribute: %s&quot;</span>, buffer);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;                        <a class="code" href="group__radcli-api.html#ga5f61f24404bf5529e53a58b31c04c65e">rc_avpair_free</a>(vp);</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;                        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;                }</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        }</div>
 <div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;</div>
-<div class="ttc" id="group__radcli-api_html_ga72e9d3a2b772a1816702af78a44dcede"><div class="ttname"><a href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a></div><div class="ttdeci">char * rc_avpair_log(rc_handle const *rh, VALUE_PAIR *pair, char *buf, size_t buf_len)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00834">avpair.c:834</a></div></div>
-<div class="ttc" id="structdict__attr_html_ac5e17c45e0e98ad20ba25dc2845514f9"><div class="ttname"><a href="structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9">dict_attr::name</a></div><div class="ttdeci">char name[NAME_LENGTH+1]</div><div class="ttdoc">attribute name. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00363">radcli.h:363</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga095a3d27e997fa89332f688e208cade3"><div class="ttname"><a href="group__radcli-api.html#ga095a3d27e997fa89332f688e208cade3">rc_dict_getattr</a></div><div class="ttdeci">DICT_ATTR * rc_dict_getattr(rc_handle const *rh, int attribute)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00364">dict.c:364</a></div></div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        <span class="keywordflow">return</span> vp;</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;}</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;</div>
+<div class="ttc" id="group__radcli-api_html_ga72e9d3a2b772a1816702af78a44dcede"><div class="ttname"><a href="group__radcli-api.html#ga72e9d3a2b772a1816702af78a44dcede">rc_avpair_log</a></div><div class="ttdeci">char * rc_avpair_log(rc_handle const *rh, VALUE_PAIR *pair, char *buf, size_t buf_len)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00837">avpair.c:837</a></div></div>
+<div class="ttc" id="structdict__attr_html_ac5e17c45e0e98ad20ba25dc2845514f9"><div class="ttname"><a href="structdict__attr.html#ac5e17c45e0e98ad20ba25dc2845514f9">dict_attr::name</a></div><div class="ttdeci">char name[NAME_LENGTH+1]</div><div class="ttdoc">attribute name. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00400">radcli.h:400</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35aa93011f8f453bc72bcf9f4e05340b923">PW_TYPE_INTEGER</a></div><div class="ttdoc">The attribute is a 32-bit integer. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00117">radcli.h:117</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga095a3d27e997fa89332f688e208cade3"><div class="ttname"><a href="group__radcli-api.html#ga095a3d27e997fa89332f688e208cade3">rc_dict_getattr</a></div><div class="ttdeci">DICT_ATTR * rc_dict_getattr(rc_handle const *rh, int attribute)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00371">dict.c:371</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712caa45e2ae25041e2cd3db3929ed4662ecd"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa45e2ae25041e2cd3db3929ed4662ecd">PW_DIGEST_NONCE_COUNT</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00263">radcli.h:263</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712cae3c705758547614ba20d1e5e9982c86e"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cae3c705758547614ba20d1e5e9982c86e">PW_VENDOR_SPECIFIC</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00170">radcli.h:170</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaa4a0d07770e69304684a36850fb0d928"><div class="ttname"><a href="group__radcli-api.html#gaa4a0d07770e69304684a36850fb0d928">rc_avpair_add</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_add(rc_handle const *rh, VALUE_PAIR **list, int attrid, void const *pval, int len, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00038">avpair.c:38</a></div></div>
-<div class="ttc" id="structdict__attr_html_a0a2564ee8c26ff5e5b3467c0805eb7f4"><div class="ttname"><a href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">dict_attr::value</a></div><div class="ttdeci">int value</div><div class="ttdoc">attribute index. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00364">radcli.h:364</a></div></div>
+<div class="ttc" id="structdict__attr_html_a0a2564ee8c26ff5e5b3467c0805eb7f4"><div class="ttname"><a href="structdict__attr.html#a0a2564ee8c26ff5e5b3467c0805eb7f4">dict_attr::value</a></div><div class="ttdeci">int value</div><div class="ttdoc">attribute index. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00401">radcli.h:401</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga5f61f24404bf5529e53a58b31c04c65e"><div class="ttname"><a href="group__radcli-api.html#ga5f61f24404bf5529e53a58b31c04c65e">rc_avpair_free</a></div><div class="ttdeci">void rc_avpair_free(VALUE_PAIR *pair)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00422">avpair.c:422</a></div></div>
-<div class="ttc" id="structvalue__pair_html_ab18bdabcb523d294e8ba328b9b8e75b0"><div class="ttname"><a href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">value_pair::type</a></div><div class="ttdeci">rc_attr_type type</div><div class="ttdoc">attribute type. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00388">radcli.h:388</a></div></div>
-<div class="ttc" id="structdict__attr_html_ab6d4e457a564297ac7776a4ceb0cb84e"><div class="ttname"><a href="structdict__attr.html#ab6d4e457a564297ac7776a4ceb0cb84e">dict_attr::type</a></div><div class="ttdeci">int type</div><div class="ttdoc">string, int, etc.. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00365">radcli.h:365</a></div></div>
-<div class="ttc" id="structvalue__pair_html_aa49f45c83a3c6a1704a9c5c8ad41adac"><div class="ttname"><a href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">value_pair::strvalue</a></div><div class="ttdeci">char strvalue[AUTH_STRING_LEN+1]</div><div class="ttdoc">contains attribute value in other cases. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00390">radcli.h:390</a></div></div>
+<div class="ttc" id="structvalue__pair_html_ab18bdabcb523d294e8ba328b9b8e75b0"><div class="ttname"><a href="structvalue__pair.html#ab18bdabcb523d294e8ba328b9b8e75b0">value_pair::type</a></div><div class="ttdeci">rc_attr_type type</div><div class="ttdoc">attribute type. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00425">radcli.h:425</a></div></div>
+<div class="ttc" id="structvalue__pair_html_aa49f45c83a3c6a1704a9c5c8ad41adac"><div class="ttname"><a href="structvalue__pair.html#aa49f45c83a3c6a1704a9c5c8ad41adac">value_pair::strvalue</a></div><div class="ttdeci">char strvalue[AUTH_STRING_LEN+1]</div><div class="ttdoc">contains attribute value in other cases. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00427">radcli.h:427</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga9718df79e6fdb78c06abf9e33ae98616"><div class="ttname"><a href="group__radcli-api.html#ga9718df79e6fdb78c06abf9e33ae98616">rc_avpair_parse</a></div><div class="ttdeci">int rc_avpair_parse(rc_handle const *rh, char const *buffer, VALUE_PAIR **first_pair)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00491">avpair.c:491</a></div></div>
-<div class="ttc" id="structvalue__pair_html"><div class="ttname"><a href="structvalue__pair.html">value_pair</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00384">radcli.h:384</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga849a0ade6619052eb0f3f06a5541b06f"><div class="ttname"><a href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a></div><div class="ttdeci">DICT_VALUE * rc_dict_getval(rc_handle const *rh, uint32_t value, char const *attrname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00465">dict.c:465</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a37ccbb5349cb1e1dd113579fdb726493">PW_TYPE_IPADDR</a></div><div class="ttdoc">The attribute is an IPv4 address in host-byte order. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00118">radcli.h:118</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712cabcc4a90c0c3e6d95003c3f96fb3be89c"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cabcc4a90c0c3e6d95003c3f96fb3be89c">PW_DIGEST_CNONCE</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00262">radcli.h:262</a></div></div>
+<div class="ttc" id="structvalue__pair_html"><div class="ttname"><a href="structvalue__pair.html">value_pair</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00421">radcli.h:421</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga849a0ade6619052eb0f3f06a5541b06f"><div class="ttname"><a href="group__radcli-api.html#ga849a0ade6619052eb0f3f06a5541b06f">rc_dict_getval</a></div><div class="ttdeci">DICT_VALUE * rc_dict_getval(rc_handle const *rh, uint32_t value, char const *attrname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00472">dict.c:472</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaa08db12acbc9aa7d9a32503f95c380cb"><div class="ttname"><a href="group__radcli-api.html#gaa08db12acbc9aa7d9a32503f95c380cb">rc_avpair_get</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_get(VALUE_PAIR *vp, int attrid, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00353">avpair.c:353</a></div></div>
-<div class="ttc" id="group__radcli-api_html_gae88c74f6cf010bb8f56aae048f01b949"><div class="ttname"><a href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_readin(rc_handle const *rh, FILE *input)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00860">avpair.c:860</a></div></div>
-<div class="ttc" id="structdict__value_html"><div class="ttname"><a href="structdict__value.html">dict_value</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00369">radcli.h:369</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga14fb4f611fec4449117394b855ba514f"><div class="ttname"><a href="group__radcli-api.html#ga14fb4f611fec4449117394b855ba514f">rc_dict_findattr</a></div><div class="ttdeci">DICT_ATTR * rc_dict_findattr(rc_handle const *rh, char const *attrname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00387">dict.c:387</a></div></div>
-<div class="ttc" id="structvalue__pair_html_a811e6acd7e045f83a3590469ba84a1fc"><div class="ttname"><a href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">value_pair::lvalue</a></div><div class="ttdeci">uint32_t lvalue</div><div class="ttdoc">attribute value if type is PW_TYPE_INTEGER, PW_TYPE_DATE or PW_TYPE_IPADDR. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00389">radcli.h:389</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga66eb427706760d7c10b5cfa88a91e547"><div class="ttname"><a href="group__radcli-api.html#ga66eb427706760d7c10b5cfa88a91e547">rc_dict_findval</a></div><div class="ttdeci">DICT_VALUE * rc_dict_findval(rc_handle const *rh, char const *valname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00410">dict.c:410</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gae88c74f6cf010bb8f56aae048f01b949"><div class="ttname"><a href="group__radcli-api.html#gae88c74f6cf010bb8f56aae048f01b949">rc_avpair_readin</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_readin(rc_handle const *rh, FILE *input)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00863">avpair.c:863</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca5ca4f59aaaf102393aa7cf81285f3924"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ca4f59aaaf102393aa7cf81285f3924">PW_DIGEST_QOP</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00259">radcli.h:259</a></div></div>
+<div class="ttc" id="structdict__value_html"><div class="ttname"><a href="structdict__value.html">dict_value</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00406">radcli.h:406</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca68c6fc1a1704dd9872ab84ead763f1cc"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca68c6fc1a1704dd9872ab84ead763f1cc">PW_DIGEST_BODY_DIGEST</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00261">radcli.h:261</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca0bb32969cd79fa26995bc481643e57ea"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca0bb32969cd79fa26995bc481643e57ea">PW_DIGEST_NONCE</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00256">radcli.h:256</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca26fbd2e7bf17b769b213a2c2cf086d08">PW_DIGEST_REALM</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00255">radcli.h:255</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga14fb4f611fec4449117394b855ba514f"><div class="ttname"><a href="group__radcli-api.html#ga14fb4f611fec4449117394b855ba514f">rc_dict_findattr</a></div><div class="ttdeci">DICT_ATTR * rc_dict_findattr(rc_handle const *rh, char const *attrname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00394">dict.c:394</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a568bb59fd13d29da339b39f2e3003cca">PW_TYPE_IPV6ADDR</a></div><div class="ttdoc">The attribute is an 128-bit IPv6 address. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00120">radcli.h:120</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712cac2854f1817eb583f755f5cb1c32bab8d"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712cac2854f1817eb583f755f5cb1c32bab8d">PW_DIGEST_METHOD</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00257">radcli.h:257</a></div></div>
+<div class="ttc" id="structvalue__pair_html_a811e6acd7e045f83a3590469ba84a1fc"><div class="ttname"><a href="structvalue__pair.html#a811e6acd7e045f83a3590469ba84a1fc">value_pair::lvalue</a></div><div class="ttdeci">uint32_t lvalue</div><div class="ttdoc">attribute value if type is PW_TYPE_INTEGER, PW_TYPE_DATE or PW_TYPE_IPADDR. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00426">radcli.h:426</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga66eb427706760d7c10b5cfa88a91e547"><div class="ttname"><a href="group__radcli-api.html#ga66eb427706760d7c10b5cfa88a91e547">rc_dict_findval</a></div><div class="ttdeci">DICT_VALUE * rc_dict_findval(rc_handle const *rh, char const *valname)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00417">dict.c:417</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca8ead9ab04850b0310637d4024d20e5b0">PW_DIGEST_ATTRIBUTES</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00254">radcli.h:254</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35a9c88659d2655d30a0dfde78c6e261169">PW_TYPE_IPV6PREFIX</a></div><div class="ttdoc">The attribute is an IPv6 prefix; the lvalue will indicate its size. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00121">radcli.h:121</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab0c9437ce3b19a0783b6fe3df6ceaef8">PW_TYPE_DATE</a></div><div class="ttdoc">The attribute contains a 32-bit number indicating the seconds since epoch. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00119">radcli.h:119</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga8415f465137b41aff3e4aa26329d28fd"><div class="ttname"><a href="group__radcli-api.html#ga8415f465137b41aff3e4aa26329d28fd">rc_avpair_new</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_new(rc_handle const *rh, int attrid, void const *pval, int len, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00116">avpair.c:116</a></div></div>
-<div class="ttc" id="structdict__attr_html"><div class="ttname"><a href="structdict__attr.html">dict_attr</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00361">radcli.h:361</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca5ba129afe3f83f2ebb89e50c56740a6b"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca5ba129afe3f83f2ebb89e50c56740a6b">PW_DIGEST_URI</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00258">radcli.h:258</a></div></div>
+<div class="ttc" id="structdict__attr_html"><div class="ttname"><a href="structdict__attr.html">dict_attr</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00398">radcli.h:398</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga914889997a20c056d569e0099df62fd1"><div class="ttname"><a href="group__radcli-api.html#ga914889997a20c056d569e0099df62fd1">rc_avpair_gen</a></div><div class="ttdeci">VALUE_PAIR * rc_avpair_gen(rc_handle const *rh, VALUE_PAIR *pair, unsigned char const *ptr, int length, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00188">avpair.c:188</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga77f9da4f29bffb60ad29c160a0fcbed7"><div class="ttname"><a href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a></div><div class="ttdeci">int rc_avpair_tostr(rc_handle const *rh, VALUE_PAIR *pair, char *name, int ln, char *value, int lv)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00718">avpair.c:718</a></div></div>
-<div class="ttc" id="structvalue__pair_html_affc619a79fec097ad07132c30c4f9087"><div class="ttname"><a href="structvalue__pair.html#affc619a79fec097ad07132c30c4f9087">value_pair::attribute</a></div><div class="ttdeci">int attribute</div><div class="ttdoc">attribute numeric value. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00387">radcli.h:387</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga43e45fb1811660e2f18815803140f7ae"><div class="ttname"><a href="group__radcli-api.html#ga43e45fb1811660e2f18815803140f7ae">rc_dict_getvend</a></div><div class="ttdeci">DICT_VENDOR * rc_dict_getvend(rc_handle const *rh, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00448">dict.c:448</a></div></div>
-<div class="ttc" id="structvalue__pair_html_affbb165e6048a507d5d6babfc7f590a4"><div class="ttname"><a href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">value_pair::name</a></div><div class="ttdeci">char name[NAME_LENGTH+1]</div><div class="ttdoc">attribute name if known. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00386">radcli.h:386</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73"><div class="ttname"><a href="group__radcli-api.html#ggaeb8a15f596146ac9bffb58005a734e35ab842102cf4e06c8954bc4ae589fd6d73">PW_TYPE_STRING</a></div><div class="ttdoc">The attribute is a printable string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00116">radcli.h:116</a></div></div>
+<div class="ttc" id="structdict__attr_html_a4934aeb8df25acaa59ac9c44bb4662f0"><div class="ttname"><a href="structdict__attr.html#a4934aeb8df25acaa59ac9c44bb4662f0">dict_attr::type</a></div><div class="ttdeci">rc_attr_type type</div><div class="ttdoc">string, int, etc.. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00402">radcli.h:402</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga77f9da4f29bffb60ad29c160a0fcbed7"><div class="ttname"><a href="group__radcli-api.html#ga77f9da4f29bffb60ad29c160a0fcbed7">rc_avpair_tostr</a></div><div class="ttdeci">int rc_avpair_tostr(rc_handle const *rh, VALUE_PAIR *pair, char *name, int ln, char *value, int lv)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00721">avpair.c:721</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga43e45fb1811660e2f18815803140f7ae"><div class="ttname"><a href="group__radcli-api.html#ga43e45fb1811660e2f18815803140f7ae">rc_dict_getvend</a></div><div class="ttdeci">DICT_VENDOR * rc_dict_getvend(rc_handle const *rh, int vendorpec)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00455">dict.c:455</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712ca33f81986dfb713e870b683dbd6bfb048"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712ca33f81986dfb713e870b683dbd6bfb048">PW_DIGEST_USER_NAME</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00264">radcli.h:264</a></div></div>
+<div class="ttc" id="structvalue__pair_html_affbb165e6048a507d5d6babfc7f590a4"><div class="ttname"><a href="structvalue__pair.html#affbb165e6048a507d5d6babfc7f590a4">value_pair::name</a></div><div class="ttdeci">char name[NAME_LENGTH+1]</div><div class="ttdoc">attribute name if known. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00423">radcli.h:423</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga9088ae45ec4d5ae0dc9eeed2c66afcde"><div class="ttname"><a href="group__radcli-api.html#ga9088ae45ec4d5ae0dc9eeed2c66afcde">rc_avpair_assign</a></div><div class="ttdeci">int rc_avpair_assign(VALUE_PAIR *vp, void const *pval, int len)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00060">avpair.c:60</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaea365a9e2758b772b682d7e4a75b1891"><div class="ttname"><a href="group__radcli-api.html#gaea365a9e2758b772b682d7e4a75b1891">rc_avpair_insert</a></div><div class="ttdeci">void rc_avpair_insert(VALUE_PAIR **a, VALUE_PAIR *p, VALUE_PAIR *b)</div><div class="ttdef"><b>Definition:</b> <a href="avpair_8c_source.html#l00372">avpair.c:372</a></div></div>
+<div class="ttc" id="structvalue__pair_html_a6767c1719ca86b94abec9fb48344bbf3"><div class="ttname"><a href="structvalue__pair.html#a6767c1719ca86b94abec9fb48344bbf3">value_pair::attribute</a></div><div class="ttdeci">unsigned attribute</div><div class="ttdoc">attribute numeric value of type rc_attr_id. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00424">radcli.h:424</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ggaead935421b5583457637004ac1ce712caa8cb3bb6b21c3eb7e5ebde34656f54c2"><div class="ttname"><a href="group__radcli-api.html#ggaead935421b5583457637004ac1ce712caa8cb3bb6b21c3eb7e5ebde34656f54c2">PW_DIGEST_ALGORITHM</a></div><div class="ttdoc">Its type is string. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00260">radcli.h:260</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

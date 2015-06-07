@@ -105,50 +105,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;config.h&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;includes.h&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;radcli.h&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;util.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define HOSTBUF_SIZE 1024</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/*- Returns a struct addrinfo from a host name or address in textual notation.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @param host the name of the host</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @param flags should be a combinations of PW_AI flags</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * @return address which should be deallocated using freeaddrinfo() or NULL on failure</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> -*/</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">struct </span>addrinfo *rc_getaddrinfo (<span class="keywordtype">char</span> <span class="keyword">const</span> *host, <span class="keywordtype">unsigned</span> flags)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">struct </span>addrinfo hints, *res;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">int</span> err;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *service = NULL;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        memset(&amp;hints, 0, <span class="keyword">sizeof</span>(hints));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        hints.ai_socktype = SOCK_DGRAM;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (flags &amp; PW_AI_PASSIVE)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                hints.ai_flags = AI_PASSIVE;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (flags &amp; PW_AI_AUTH)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                service = <span class="stringliteral">&quot;radius&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flags &amp; PW_AI_ACCT)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                service = <span class="stringliteral">&quot;radius-acct&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        err = getaddrinfo(host, service, &amp;hints, &amp;res);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (err != 0) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;config.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;includes.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;radcli/radcli.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;util.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define HOSTBUF_SIZE 1024</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/*- Returns a struct addrinfo from a host name or address in textual notation.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @param host the name of the host</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @param flags should be a combinations of PW_AI flags</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @return address which should be deallocated using freeaddrinfo() or NULL on failure</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> -*/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">struct </span>addrinfo *rc_getaddrinfo (<span class="keywordtype">char</span> <span class="keyword">const</span> *host, <span class="keywordtype">unsigned</span> flags)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">struct </span>addrinfo hints, *res;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">int</span> err;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *service = NULL;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        memset(&amp;hints, 0, <span class="keyword">sizeof</span>(hints));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        hints.ai_socktype = SOCK_DGRAM;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (flags &amp; PW_AI_PASSIVE)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                hints.ai_flags = AI_PASSIVE;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (flags &amp; PW_AI_AUTH)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                service = <span class="stringliteral">&quot;radius&quot;</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flags &amp; PW_AI_ACCT)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                service = <span class="stringliteral">&quot;radius-acct&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        err = getaddrinfo(host, service, &amp;hints, &amp;res);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (err != 0) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group__misc-api.html#ga4c83ca0ca5eb03103e385ce87046efb0">   63</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="group__misc-api.html#ga4c83ca0ca5eb03103e385ce87046efb0">rc_getport</a>(<span class="keywordtype">int</span> type)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">struct </span>servent *svp;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ((svp = getservbyname ((type==AUTH)?<span class="stringliteral">&quot;radius&quot;</span> : <span class="stringliteral">&quot;radacct&quot;</span>, <span class="stringliteral">&quot;udp&quot;</span>)) == NULL)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">if</span> ((svp = getservbyname ((type==<a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>)?<span class="stringliteral">&quot;radius&quot;</span> : <span class="stringliteral">&quot;radacct&quot;</span>, <span class="stringliteral">&quot;udp&quot;</span>)) == NULL)</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> (type==AUTH) ? PW_AUTH_UDP_PORT : PW_ACCT_UDP_PORT;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span> (type==<a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>) ? PW_AUTH_UDP_PORT : PW_ACCT_UDP_PORT;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> ntohs ((<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>) svp-&gt;s_port);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
@@ -244,8 +244,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;       <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+<div class="ttc" id="group__radcli-api_html_gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218"><div class="ttname"><a href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a></div><div class="ttdoc">Request for authentication server. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00075">radcli.h:75</a></div></div>
 <div class="ttc" id="group__misc-api_html_ga4c83ca0ca5eb03103e385ce87046efb0"><div class="ttname"><a href="group__misc-api.html#ga4c83ca0ca5eb03103e385ce87046efb0">rc_getport</a></div><div class="ttdeci">unsigned short rc_getport(int type)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00063">ip_util.c:63</a></div></div>
-<div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00582">config.c:582</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00567">config.c:567</a></div></div>
 <div class="ttc" id="group__misc-api_html_gae2901e09e8babae97222c3f1b208cebf"><div class="ttname"><a href="group__misc-api.html#gae2901e09e8babae97222c3f1b208cebf">rc_own_hostname</a></div><div class="ttdeci">int rc_own_hostname(char *hostname, int len)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00081">ip_util.c:81</a></div></div>
 <div class="ttc" id="group__misc-api_html_gaa583d1326afa3b9ccd4958f3a0e6c89b"><div class="ttname"><a href="group__misc-api.html#gaa583d1326afa3b9ccd4958f3a0e6c89b">rc_get_srcaddr</a></div><div class="ttdeci">int rc_get_srcaddr(struct sockaddr *lia, const struct sockaddr *ria)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00122">ip_util.c:122</a></div></div>
 <div class="ttc" id="group__misc-api_html_gaf68601b86a8c0a184b699e5f51db912e"><div class="ttname"><a href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a></div><div class="ttdeci">void rc_own_bind_addr(rc_handle *rh, struct sockaddr_storage *lia)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00161">ip_util.c:161</a></div></div>
