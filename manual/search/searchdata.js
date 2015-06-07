@@ -1,21 +1,33 @@
 var indexSectionsWithContent =
 {
-  0: "mrt",
-  1: "r",
-  2: "mt"
+  0: "acdlmnprstv",
+  1: "drs",
+  2: "r",
+  3: "aclnprstv",
+  4: "r",
+  5: "apr",
+  6: "mt"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "functions",
-  2: "groups"
+  1: "classes",
+  2: "functions",
+  3: "variables",
+  4: "enums",
+  5: "enumvalues",
+  6: "groups"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Functions",
-  2: "Modules"
+  1: "Data Structures",
+  2: "Functions",
+  3: "Variables",
+  4: "Enumerations",
+  5: "Enumerator",
+  6: "Modules"
 };
 

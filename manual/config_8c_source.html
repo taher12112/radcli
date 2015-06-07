@@ -41,7 +41,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
+      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -163,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> set_option_srv(<span class="keywordtype">char</span> <span class="keyword">const</span> *filename, <span class="keywordtype">int</span> line, OPTION *option, <span class="keywordtype">char</span> <span class="keyword">const</span> *p)</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        SERVER *serv;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *serv;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">char</span> *p_pointer;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">char</span> *p_dupe;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">char</span> *p_save;</div>
@@ -178,7 +180,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        serv = (SERVER *) option-&gt;val;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        serv = (<a class="code" href="structserver.html">SERVER</a> *) option-&gt;val;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        if (serv == NULL) {</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                DEBUG(LOG_ERR, <span class="stringliteral">&quot;option-&gt;val / server is NULL, allocating memory&quot;</span>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                serv = malloc(<span class="keyword">sizeof</span>(*serv));</div>
@@ -395,8 +397,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
 <div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gaf1b3073b425042e583fa0acfa4ce31fd">  347</a></span>&#160;rc_handle *<a class="code" href="group__radcli-api.html#gaf1b3073b425042e583fa0acfa4ce31fd">rc_config_init</a>(rc_handle *rh)</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        SERVER *authservers = NULL;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        SERVER *acctservers;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *authservers = NULL;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *acctservers;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        OPTION *acct;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        OPTION *auth;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
@@ -411,7 +413,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        auth = find_option(rh, <span class="stringliteral">&quot;authserver&quot;</span>, OT_ANY);</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> (auth) {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                authservers = calloc(1, <span class="keyword">sizeof</span>(SERVER));</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                authservers = calloc(1, <span class="keyword">sizeof</span>(<a class="code" href="structserver.html">SERVER</a>));</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                <span class="keywordflow">if</span>(authservers == NULL) {</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                        rc_log(LOG_CRIT, <span class="stringliteral">&quot;rc_config_init: error initializing server structs&quot;</span>);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                        <a class="code" href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a>(rh);</div>
@@ -422,7 +424,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        acct = find_option(rh, <span class="stringliteral">&quot;acctserver&quot;</span>, OT_ANY);</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">if</span> (acct) {</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                acctservers = calloc(1, <span class="keyword">sizeof</span>(SERVER));</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                acctservers = calloc(1, <span class="keyword">sizeof</span>(<a class="code" href="structserver.html">SERVER</a>));</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                <span class="keywordflow">if</span>(acctservers == NULL) {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;                        rc_log(LOG_CRIT, <span class="stringliteral">&quot;rc_config_init: error initializing server structs&quot;</span>);</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                        <a class="code" href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a>(rh);</div>
@@ -628,14 +630,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        }</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;}</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;</div>
-<div class="line"><a name="l00612"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">  612</a></span>&#160;SERVER *<a class="code" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a>(rc_handle <span class="keyword">const</span> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *optname)</div>
+<div class="line"><a name="l00612"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">  612</a></span>&#160;<a class="code" href="structserver.html">SERVER</a> *<a class="code" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a>(rc_handle <span class="keyword">const</span> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *optname)</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;{</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;        OPTION *option;</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;        option = find_option(rh, optname, OT_SRV);</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;        <span class="keywordflow">if</span> (option != NULL) {</div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                <span class="keywordflow">return</span> (SERVER *)option-&gt;val;</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                <span class="keywordflow">return</span> (<a class="code" href="structserver.html">SERVER</a> *)option-&gt;val;</div>
 <div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                rc_log(LOG_CRIT, <span class="stringliteral">&quot;rc_conf_srv: unkown config option requested: %s&quot;</span>, optname);</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                <span class="keywordflow">return</span> NULL;</div>
@@ -644,7 +646,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;</div>
 <div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gab78217ed52b89c41ff10356261ad8dfa">  632</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__radcli-api.html#gab78217ed52b89c41ff10356261ad8dfa">rc_test_config</a>(rc_handle *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *filename)</div>
 <div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;{</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        SERVER *srv;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *srv;</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;</div>
 <div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        srv = <a class="code" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a>(rh, <span class="stringliteral">&quot;authserver&quot;</span>);</div>
 <div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;        <span class="keywordflow">if</span> (!srv || !srv-&gt;max)</div>
@@ -755,7 +757,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;}</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;</div>
 <div class="line"><a name="l00770"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gad778c0ba593c48a7961f9e1016d420ca">  770</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__radcli-api.html#gad778c0ba593c48a7961f9e1016d420ca">rc_find_server_addr</a> (rc_handle <span class="keyword">const</span> *rh, <span class="keywordtype">char</span> <span class="keyword">const</span> *server_name,</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                         <span class="keyword">struct</span> addrinfo** info, <span class="keywordtype">char</span> *secret, rc_type type)</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                         <span class="keyword">struct</span> addrinfo** info, <span class="keywordtype">char</span> *secret, <a class="code" href="group__radcli-api.html#ga1f6b599e8cec6050819503fd2064cc15">rc_type</a> type)</div>
 <div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;{</div>
 <div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        <span class="keywordtype">int</span>             i;</div>
 <div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="keywordtype">int</span>             result = 0;</div>
@@ -766,16 +768,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <span class="keywordtype">char</span>            hostnm[AUTH_ID_LEN + 1];</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keywordtype">char</span>           *buffer_save;</div>
 <div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        <span class="keywordtype">char</span>           *hostnm_save;</div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        SERVER         *authservers;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        SERVER         *acctservers;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;        <a class="code" href="structserver.html">SERVER</a>         *authservers;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;        <a class="code" href="structserver.html">SERVER</a>         *acctservers;</div>
 <div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;        <span class="keyword">struct </span>addrinfo *tmpinfo = NULL;</div>
 <div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>      *fservers;</div>
 <div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;</div>
 <div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;        <span class="comment">/* Lookup the IP address of the radius server */</span></div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <span class="keywordflow">if</span> ((*info = rc_getaddrinfo (server_name, type==AUTH?PW_AI_AUTH:PW_AI_ACCT)) == NULL)</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;        <span class="keywordflow">if</span> ((*info = rc_getaddrinfo (server_name, type==<a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>?PW_AI_AUTH:PW_AI_ACCT)) == NULL)</div>
 <div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;                <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        <span class="keywordflow">if</span> (type == AUTH) {</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;        <span class="keywordflow">if</span> (type == <a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>) {</div>
 <div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;                <span class="comment">/* Check to see if the server secret is defined in the rh config */</span></div>
 <div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;                <span class="keywordflow">if</span>( (authservers = <a class="code" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a>(rh, <span class="stringliteral">&quot;authserver&quot;</span>)) != NULL )</div>
 <div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;                {</div>
@@ -790,7 +792,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                                }</div>
 <div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;                        }</div>
 <div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;                }</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == ACCT) {</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a74a4fdce4c60f0a4d52384679db6f90d">ACCT</a>) {</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                <span class="keywordflow">if</span>( (acctservers = <a class="code" href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a>(rh, <span class="stringliteral">&quot;acctserver&quot;</span>)) != NULL )</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                {</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                        <span class="keywordflow">for</span>( i = 0; i &lt; acctservers-&gt;max; i++ )</div>
@@ -904,7 +906,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00924"></a><span class="lineno"><a class="line" href="group__radcli-api.html#gacf5906a83f783dcb41b9c590e68311a9">  924</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__radcli-api.html#gacf5906a83f783dcb41b9c590e68311a9">rc_config_free</a>(rc_handle *rh)</div>
 <div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;{</div>
 <div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;        <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        SERVER *serv;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        <a class="code" href="structserver.html">SERVER</a> *serv;</div>
 <div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;</div>
 <div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;        <span class="keywordflow">if</span> (rh-&gt;config_options == NULL)</div>
 <div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;                <span class="keywordflow">return</span>;</div>
@@ -913,7 +915,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;                <span class="keywordflow">if</span> (rh-&gt;config_options[i].val == NULL)</div>
 <div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;                        <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;                <span class="keywordflow">if</span> (rh-&gt;config_options[i].type == OT_SRV) {</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                        serv = (SERVER *)rh-&gt;config_options[i].val;</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;                        serv = (<a class="code" href="structserver.html">SERVER</a> *)rh-&gt;config_options[i].val;</div>
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;                        for (j = 0; j &lt; serv-&gt;max; j++){</div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                                free(serv-&gt;name[j]);</div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                                <span class="keywordflow">if</span>(serv-&gt;secret[j]) free(serv-&gt;secret[j]);</div>
@@ -948,7 +950,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;        free(rh);</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;}</div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;</div>
-<div class="line"><a name="l00986"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">  986</a></span>&#160;rc_socket_type <a class="code" href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">rc_get_socket_type</a>(rc_handle *rh)</div>
+<div class="line"><a name="l00986"></a><span class="lineno"><a class="line" href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">  986</a></span>&#160;<a class="code" href="group__radcli-api.html#gaf67aec1f3d44fd0e24444c829ed190ef">rc_socket_type</a> <a class="code" href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">rc_get_socket_type</a>(rc_handle *rh)</div>
 <div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;{</div>
 <div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;        <span class="keywordflow">return</span> rh-&gt;so_type;</div>
 <div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;}</div>
@@ -957,16 +959,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="group__radcli-api_html_gaf350649b537494e8971c42dae5d6832b"><div class="ttname"><a href="group__radcli-api.html#gaf350649b537494e8971c42dae5d6832b">rc_conf_srv</a></div><div class="ttdeci">SERVER * rc_conf_srv(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00612">config.c:612</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gad778c0ba593c48a7961f9e1016d420ca"><div class="ttname"><a href="group__radcli-api.html#gad778c0ba593c48a7961f9e1016d420ca">rc_find_server_addr</a></div><div class="ttdeci">int rc_find_server_addr(rc_handle const *rh, char const *server_name, struct addrinfo **info, char *secret, rc_type type)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00770">config.c:770</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gab78217ed52b89c41ff10356261ad8dfa"><div class="ttname"><a href="group__radcli-api.html#gab78217ed52b89c41ff10356261ad8dfa">rc_test_config</a></div><div class="ttdeci">int rc_test_config(rc_handle *rh, char const *filename)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00632">config.c:632</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218"><div class="ttname"><a href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a></div><div class="ttdoc">Request for authentication server. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00074">radcli.h:74</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaa65aaa1a37430bb2a4b971dbb123c36e"><div class="ttname"><a href="group__radcli-api.html#gaa65aaa1a37430bb2a4b971dbb123c36e">rc_conf_int</a></div><div class="ttdeci">int rc_conf_int(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00587">config.c:587</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga42685c9f973d00219a3edc6aa4344a47"><div class="ttname"><a href="group__radcli-api.html#ga42685c9f973d00219a3edc6aa4344a47">rc_conf_str</a></div><div class="ttdeci">char * rc_conf_str(rc_handle const *rh, char const *optname)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00567">config.c:567</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gac2f103c1c812c1bde0c052ed73cdcdee"><div class="ttname"><a href="group__radcli-api.html#gac2f103c1c812c1bde0c052ed73cdcdee">rc_dict_free</a></div><div class="ttdeci">void rc_dict_free(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00493">dict.c:493</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gacf5906a83f783dcb41b9c590e68311a9"><div class="ttname"><a href="group__radcli-api.html#gacf5906a83f783dcb41b9c590e68311a9">rc_config_free</a></div><div class="ttdeci">void rc_config_free(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00924">config.c:924</a></div></div>
+<div class="ttc" id="structserver_html"><div class="ttname"><a href="structserver.html">server</a></div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00090">radcli.h:90</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gga1f6b599e8cec6050819503fd2064cc15a74a4fdce4c60f0a4d52384679db6f90d"><div class="ttname"><a href="group__radcli-api.html#gga1f6b599e8cec6050819503fd2064cc15a74a4fdce4c60f0a4d52384679db6f90d">ACCT</a></div><div class="ttdoc">Request for accounting server. </div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00075">radcli.h:75</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaefc76d69a724a00ea12e13cec9006541"><div class="ttname"><a href="group__radcli-api.html#gaefc76d69a724a00ea12e13cec9006541">rc_add_config</a></div><div class="ttdeci">int rc_add_config(rc_handle *rh, char const *option_name, char const *option_val, char const *source, int line)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00294">config.c:294</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga0cf236cc5c5d4938334c97efc75a4730"><div class="ttname"><a href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a></div><div class="ttdeci">rc_handle * rc_read_config(char const *filename)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00433">config.c:433</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga48d9ef200a6cc234684a633b76ee650e"><div class="ttname"><a href="group__radcli-api.html#ga48d9ef200a6cc234684a633b76ee650e">rc_destroy</a></div><div class="ttdeci">void rc_destroy(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00972">config.c:972</a></div></div>
 <div class="ttc" id="group__misc-api_html_gaf68601b86a8c0a184b699e5f51db912e"><div class="ttname"><a href="group__misc-api.html#gaf68601b86a8c0a184b699e5f51db912e">rc_own_bind_addr</a></div><div class="ttdeci">void rc_own_bind_addr(rc_handle *rh, struct sockaddr_storage *lia)</div><div class="ttdef"><b>Definition:</b> <a href="ip__util_8c_source.html#l00161">ip_util.c:161</a></div></div>
 <div class="ttc" id="group__radcli-api_html_gaf1b3073b425042e583fa0acfa4ce31fd"><div class="ttname"><a href="group__radcli-api.html#gaf1b3073b425042e583fa0acfa4ce31fd">rc_config_init</a></div><div class="ttdeci">rc_handle * rc_config_init(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00347">config.c:347</a></div></div>
+<div class="ttc" id="group__radcli-api_html_ga1f6b599e8cec6050819503fd2064cc15"><div class="ttname"><a href="group__radcli-api.html#ga1f6b599e8cec6050819503fd2064cc15">rc_type</a></div><div class="ttdeci">rc_type</div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00073">radcli.h:73</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga9cac8adae500892228c7e0acdedc0e79"><div class="ttname"><a href="group__radcli-api.html#ga9cac8adae500892228c7e0acdedc0e79">rc_read_dictionary</a></div><div class="ttdeci">int rc_read_dictionary(rc_handle *rh, char const *filename)</div><div class="ttdef"><b>Definition:</b> <a href="dict_8c_source.html#l00036">dict.c:36</a></div></div>
+<div class="ttc" id="group__radcli-api_html_gaf67aec1f3d44fd0e24444c829ed190ef"><div class="ttname"><a href="group__radcli-api.html#gaf67aec1f3d44fd0e24444c829ed190ef">rc_socket_type</a></div><div class="ttdeci">rc_socket_type</div><div class="ttdef"><b>Definition:</b> <a href="radcli_8h_source.html#l00100">radcli.h:100</a></div></div>
 <div class="ttc" id="group__radcli-api_html_ga0e0efb892e51ebf5c2a7e748e12b0b80"><div class="ttname"><a href="group__radcli-api.html#ga0e0efb892e51ebf5c2a7e748e12b0b80">rc_get_socket_type</a></div><div class="ttdeci">rc_socket_type rc_get_socket_type(rc_handle *rh)</div><div class="ttdef"><b>Definition:</b> <a href="config_8c_source.html#l00986">config.c:986</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
