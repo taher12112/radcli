@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lvalue',['lvalue',['../structrc__value__pair.html#a6bddeb06955320ae27118127013f476e',1,'rc_value_pair']]]
+  ['deadtime_5fends',['deadtime_ends',['../structserver.html#a0c7520372c23e308124170814872d384',1,'server']]]
 ];
