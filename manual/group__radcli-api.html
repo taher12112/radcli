@@ -109,24 +109,6 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gaf8b8c544832d04ce0380ed028f1d8049"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaf8b8c544832d04ce0380ed028f1d8049"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PARSE_MODE_NAME</b>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:gaf8b8c544832d04ce0380ed028f1d8049"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadf7aa00713f4aa76963d5239ec4c163c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gadf7aa00713f4aa76963d5239ec4c163c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PARSE_MODE_EQUAL</b>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:gadf7aa00713f4aa76963d5239ec4c163c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gada663404437acb56cc4ea5bd7dc8712d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gada663404437acb56cc4ea5bd7dc8712d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PARSE_MODE_VALUE</b>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:gada663404437acb56cc4ea5bd7dc8712d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabfaa8cde0e48873cd6c22aa8dd43c92f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gabfaa8cde0e48873cd6c22aa8dd43c92f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PARSE_MODE_INVALID</b>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:gabfaa8cde0e48873cd6c22aa8dd43c92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga267f1ade2a82f53ab0d47e3c2ebce73a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga267f1ade2a82f53ab0d47e3c2ebce73a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SA</b>(p)&#160;&#160;&#160;((struct sockaddr *)(p))</td></tr>
-<tr class="separator:ga267f1ade2a82f53ab0d47e3c2ebce73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1db155ae512a115d97997c45aa695f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab1db155ae512a115d97997c45aa695f4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCLOSE</b>(fd)&#160;&#160;&#160;if (sfuncs-&gt;close_fd) sfuncs-&gt;close_fd(fd)</td></tr>
-<tr class="separator:gab1db155ae512a115d97997c45aa695f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga46d11ec275c6058641c88dc7eb7a4af5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga46d11ec275c6058641c88dc7eb7a4af5"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>AUTH_PASS_LEN</b>&#160;&#160;&#160;(3 * 16) /* multiple of 16 */</td></tr>
 <tr class="separator:ga46d11ec275c6058641c88dc7eb7a4af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1885,7 +1867,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>pointer to added a/v pair upon success, NULL pointer upon failure. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="radexample_8c-example.html#a4">radexample.c</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00041">41</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00046">46</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -1931,7 +1913,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success or -1 on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00088">88</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00093">93</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -1956,7 +1938,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00451">451</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00456">456</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -2015,7 +1997,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value_pair list or NULL on failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00218">218</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00223">223</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -2059,7 +2041,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the value pair found. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00382">382</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00387">387</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -2274,7 +2256,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00401">401</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00406">406</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -2385,7 +2367,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to generated a/v pair when successful, NULL when failure. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00146">146</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00151">151</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -2412,7 +2394,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to the next pair, or NULL when finished. </dd></dl>
 
-<p>Definition at line <a class="el" href="avpair_8c_source.html#l00065">65</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
+<p>Definition at line <a class="el" href="avpair_8c_source.html#l00070">70</a> of file <a class="el" href="avpair_8c_source.html">avpair.c</a>.</p>
 
 </div>
 </div>
@@ -3318,7 +3300,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>OK_RC (0) on success, TIMEOUT_RC on timeout REJECT_RC on acess reject, or negative on failure as return value. </dd></dl>
 
-<p>Definition at line <a class="el" href="sendserver_8c_source.html#l00292">292</a> of file <a class="el" href="sendserver_8c_source.html">sendserver.c</a>.</p>
+<p>Definition at line <a class="el" href="sendserver_8c_source.html#l00291">291</a> of file <a class="el" href="sendserver_8c_source.html">sendserver.c</a>.</p>
 
 </div>
 </div>
