@@ -92,9 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include        &lt;config.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include        &lt;includes.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include        &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include        &lt;radcli/radcli.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include        &lt;pathnames.h&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span></div>
 <div class="line">main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
@@ -106,7 +105,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        uint32_t        service;</div>
 <div class="line">        rc_handle       *rh;</div>
 <div class="line"></div>
-<div class="line">        <span class="comment">/* Don&#39;t needed if you already used openlog() */</span></div>
+<div class="line">        <span class="comment">/* Not needed if you already used openlog() */</span></div>
 <div class="line">        <a name="a1"></a><a class="code" href="group__misc-api.html#gaba387f2f50c56fb5d6ccfe98bb7f65c7">rc_openlog</a>(<span class="stringliteral">&quot;my-prog-name&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">        <span class="keywordflow">if</span> ((rh = <a name="a2"></a><a class="code" href="group__radcli-api.html#ga0cf236cc5c5d4938334c97efc75a4730">rc_read_config</a>(RC_CONFIG_FILE)) == NULL)</div>
