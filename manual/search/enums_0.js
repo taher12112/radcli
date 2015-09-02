@@ -15,5 +15,6 @@ var searchData=
   ['rc_5fsocket_5ftype',['rc_socket_type',['../group__radcli-api.html#gaf67aec1f3d44fd0e24444c829ed190ef',1,'radcli.h']]],
   ['rc_5fstandard_5fcodes',['rc_standard_codes',['../group__radcli-api.html#gab11696a52f011bb85303858b1d7e2a07',1,'radcli.h']]],
   ['rc_5ftermination_5faction',['rc_termination_action',['../group__radcli-api.html#ga34e1cd8a5eef611e3afe575c3c07383f',1,'radcli.h']]],
-  ['rc_5ftype',['rc_type',['../group__radcli-api.html#ga1f6b599e8cec6050819503fd2064cc15',1,'radcli.h']]]
+  ['rc_5ftype',['rc_type',['../group__radcli-api.html#ga1f6b599e8cec6050819503fd2064cc15',1,'radcli.h']]],
+  ['rc_5fvendor_5fpec',['rc_vendor_pec',['../group__radcli-api.html#ga3d5741cff96df4efad33ff023fc16256',1,'radcli.h']]]
 ];
