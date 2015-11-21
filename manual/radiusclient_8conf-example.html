@@ -96,9 +96,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"># no port is specified /etc/services is consulted of the radius</div>
 <div class="line"># service. if this fails also a compiled in default is used.</div>
 <div class="line"># For IPv6 addresses use the &#39;[IPv6]:port:secret&#39; format, or</div>
-<div class="line"># simply &#39;[IPv6]&#39;. You may specify more than a single server.</div>
+<div class="line"># simply &#39;[IPv6]&#39;. You may specify more than a single server</div>
+<div class="line"># in a comma-separated list.</div>
 <div class="line">#</div>
 <div class="line">authserver      localhost</div>
+<div class="line">#authserver     127.1.1.1:9999,172.17.0.1</div>
 <div class="line"></div>
 <div class="line"># RADIUS server to use for accouting requests. All that is</div>
 <div class="line"># written for authserver applies, in acctserver as well. </div>
@@ -110,8 +112,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"># server</div>
 <div class="line">servers         /usr/local/etc/radcli/servers</div>
 <div class="line"></div>
-<div class="line"># dictionary of allowed attributes and values</div>
-<div class="line"># just like in the normal RADIUS distributions</div>
+<div class="line"># Dictionary of allowed attributes and values. That depends</div>
+<div class="line"># heavily on the features of your server. A default dictionary</div>
+<div class="line"># is installed in /usr/local/share/radcli/dictionary</div>
 <div class="line">dictionary      /usr/local/etc/radcli/dictionary</div>
 <div class="line"></div>
 <div class="line"># default authentication realm to append to all usernames if no</div>
@@ -129,6 +132,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"># local address from which radius packets have to be sent</div>
 <div class="line">bindaddr *</div>
 <div class="line"></div>
+<div class="line"># To enable verbose debugging messages in syslog, enable the following</div>
+<div class="line">#clientdebug 1</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
