@@ -59,7 +59,7 @@ dnf install -y autoconf libtool automake gnutls-devel gettext-devel abi-complian
 
 Required dependencies (Debian pkg):
 ```
-apt-get install -y autoconf libtool automake libgnutls28-dev abi-compliance-checker
+apt-get install -y autoconf libtool automake libgnutls28-dev abi-compliance-checker dh-autoreconf
 ```
 
 5. Bug reporting
